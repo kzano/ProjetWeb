@@ -1,7 +1,9 @@
+/* En-tete de page */
 #logo {
     width: 30%;
 }
 
+/* Menu horizontal */
 ul {
     padding: 0;
     margin: 0;
@@ -11,7 +13,6 @@ ul {
 li {
     margin-left: 2px;
     float: left;
-    /*pour IE*/
 }
 
 /* Bas de page */
