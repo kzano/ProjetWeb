@@ -1,4 +1,4 @@
-#BonColoc
+# BonColoc
 ## Projet Web RSI
 
 Supposons une personne quitte une colocation, les colocataires doivent alors trouver une nouvelle personne. BonColoc permet alors de trouver la personne adéquate.
