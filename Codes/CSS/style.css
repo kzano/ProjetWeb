@@ -1,3 +1,4 @@
+/* Corps */
 * {
     font-family: Calibri, sans-serif;
     font-size: 16px;
@@ -26,13 +27,25 @@ li {
     float: right;
 }
 
+/* Lien */
 li a {
     color: black;
 }
 
+/* Souris sur le lien */
 li a:hover {
     color: #009900;
 }
+
+/* Selection du lien */
+li a:active {
+    color: #009900;
+}
+
+/* Lien visite */
+/*li a:visited {
+    color: #009900;
+}*/
 
 /* Bas de page */
 footer {
