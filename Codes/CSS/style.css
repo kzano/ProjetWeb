@@ -44,7 +44,6 @@ li a:active {
 
 div {
     margin: 0 auto;
-    width: 100px;
 }
 
 .boutons_principaux {
@@ -54,6 +53,27 @@ div {
     background-color: black;
     -webkit-box-shadow: 5px 5px 5px -3px black;
     box-shadow: 5px 5px 5px -3px black;
+    text-align: center;
+    width: 5cm;
+}
+
+.boutons_principaux:hover {
+    border: 5px outset #009900;
+    border-radius: 10px;
+    background-color: #009900;
+    -webkit-box-shadow: 5px 5px 5px -3px black;
+    box-shadow: 5px 5px 5px -3px black;
+}
+
+.boutons_principaux:active {
+    border: 5px inset #009900;
+    border-radius: 10px;
+    box-shadow: inset -2px -2px 3px #009900,
+                inset 2px 2px 3px #009900;
+}
+
+table {
+    margin: auto;
     text-align: center;
 }
 
@@ -65,4 +85,9 @@ div {
 /* Bas de page */
 footer {
     background-color: black;
+    position: absolute;
+    height: 3cm;
+    bottom: 0;
+    left: 0;
+    right: 0
 }
