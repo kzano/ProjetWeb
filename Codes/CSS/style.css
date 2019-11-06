@@ -42,6 +42,7 @@ li a:active {
     color: #009900;
 }
 
+/* Bloc contenant le tableau qui contient les boutons principaux */
 div {
     margin: 0 auto;
 }
@@ -72,15 +73,11 @@ div {
                 inset 2px 2px 3px #009900;
 }
 
+/* Tableau contenu dans la div */
 table {
     margin: auto;
     text-align: center;
 }
-
-/* Lien visite */
-/*li a:visited {
-    color: #009900;
-}*/
 
 /* Bas de page */
 footer {
