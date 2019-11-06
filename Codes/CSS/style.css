@@ -30,6 +30,10 @@ li a {
     color: black;
 }
 
+li a:hover {
+    color: #009900;
+}
+
 /* Bas de page */
 footer {
     background-color: black;
