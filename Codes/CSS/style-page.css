@@ -79,3 +79,17 @@ footer p {
     text-align: center;
     color: white;
 }
+
+.footer {
+    position: relative;
+    margin-top: 3cm;
+}
+
+.background-fond {
+    -webkit-box-shadow: -5px 3px 18px 3px rgba(220, 220, 220, 0.7);
+    box-shadow: -5px 3px 18px 3px rgba(220, 220, 220, 0.7);
+    border: none;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 1cm;
+}

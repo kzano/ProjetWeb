@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style-page.css">
+</head>
+
+<body>
+    <!-- En-tete -->
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="logo" src="images/logo.png" alt="BonColoc">
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li><a href="#">Aide</a></li>
+                        <li><a href="#">S'inscrire</a></li>
+                        <li><a href="index.html">Se connecter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- formulaire d'inscription -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4 background-fond">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <!-- nom -->
+                            <div class="form-group">
+                                <label for="inputNom">Nom</label>
+                                <input type="text" class="form-control" placeholder="Nom">
+                            </div>
+
+                            <!-- date de naissance -->
+                            <div class="form-group">
+                                <label for="inputDateNaissance">Date de naissance</label>
+                                <input type="date" class="form-control" id="start" name="trip-start" value="2018-07-22"
+                                    min="1908-01-01">
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <!-- prenom -->
+                            <div class="form-group">
+                                <label for="inputPrenom">Prénom</label>
+                                <input type="text" class="form-control" placeholder="Prénom">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="select-profil">Profil</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option></option>
+                                    <option>Films</option>
+                                    <option>Musique</option>
+                                    <option>Animaux</option>
+                                    <option>Sports</option>
+                                    <option>Jeux et jouets</option>
+                                    <option>Vins et gastronomie</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col"></div>
+                    </div>
+
+                    <!-- ligne horizontale -->
+                    <div class="row">
+                        <hr width="100%" color="black">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputIdentifiant">Identifiant</label>
+                        <input type="text" class="form-control" id="inputIdentifiant" aria-describedby="emailHelp"
+                            placeholder="Identifiant">
+                    </div>
+
+                    <!-- adresse de courrier electronique -->
+                    <div class="form-group">
+                        <label for="inputCourriel">Adresse de courrier électronique</label>
+                        <input type="email" class="form-control" id="inputCourriel" placeholder="nom@gmail.com">
+                    </div>
+
+                    <!-- mot de passe -->
+                    <div class="form-group">
+                        <label for="inputPassword">Mot de passe</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword">Confirmer votre mot de passe</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe">
+                    </div>
+
+                    <!-- s'inscrire -->
+                    <div class="btn-group btn-custom" role="group" aria-label="Basic example">
+                        <button type="submit" class="btn btn-noir btn-lg btn-custom">S'inscrire</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <!-- pied -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row"></div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
