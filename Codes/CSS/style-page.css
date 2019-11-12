@@ -1,0 +1,81 @@
+/* Corps */
+* {
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+/* En-tete */
+#logo {
+    width: 50%;
+}
+
+/* menu horizontal dans l'en-tete */
+ul {
+    float: right;
+    padding: 0;
+    margin: 10px;
+    list-style-type: none;
+}
+
+/* liste des liens */
+li {
+    margin-left: 16px;
+    float: right;
+}
+
+/* lien du menu horizontal dans l'en-tete */
+li a {
+    color: black;
+}
+
+/* passage de la souris sur le lien */
+li a:hover {
+    color: #009900;
+}
+
+/* selection du lien */
+li a:active {
+    color: #009900;
+}
+
+/* bouton noir */
+.btn-noir {
+    background-color: black;
+    border-width: 1px;
+    border-color: white;
+
+    color: white;
+}
+
+/* centrage des boutons principaux */
+.btn-custom {
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* passage de la souris sur un bouton principal */
+.btn-custom button:hover {
+    background-color: #009900;
+    color: white;
+}
+
+/* pied de page */
+footer {
+    background-color: black;
+    position: absolute;
+    height: 3cm;
+    bottom: 0;
+    left: 0;
+    right: 0
+}
+
+/* paragraphe contenu dans le pied de page */
+footer p {
+    text-align: center;
+    color: white;
+}
