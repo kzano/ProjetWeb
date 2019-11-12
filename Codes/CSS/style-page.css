@@ -64,6 +64,10 @@ li a:active {
     color: white;
 }
 
+#paragrapheInscription {
+    text-align: center;
+}
+
 /* pied de page */
 footer {
     background-color: black;
