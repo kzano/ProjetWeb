@@ -48,7 +48,12 @@ li a:active {
     background-color: black;
     border-width: 1px;
     border-color: white;
+    color: white;
+}
 
+/* passage de la souris sur un bouton principal */
+.btn-noir:hover {
+    background-color: #009900;
     color: white;
 }
 
@@ -58,12 +63,6 @@ li a:active {
     width: 100%;
 }
 
-/* passage de la souris sur un bouton principal */
-.btn-custom button:hover {
-    background-color: #009900;
-    color: white;
-}
-
 #paragrapheInscription {
     text-align: center;
 }
@@ -71,7 +70,6 @@ li a:active {
 /* pied de page */
 footer {
     background-color: black;
-    position: absolute;
     height: 3cm;
     bottom: 0;
     left: 0;
@@ -105,3 +103,18 @@ footer p {
     outline: 0 none;
 }
 
+.div-annonce {
+    padding: 0.5cm;
+}
+
+.img-annonce {
+    width: 240px;
+    height: 100%;
+}
+
+.div-img-annonce {
+    height: 100%;
+    width: 240px;
+    display: flex;
+    align-items: center;
+}

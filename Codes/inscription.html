@@ -5,9 +5,13 @@
 <head>
     <meta charset="utf-8" />
 
+    <title>BonColoc</title>
+
     <!-- css -->
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style-page.css">
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
 </head>
 
 <body>
@@ -32,9 +36,7 @@
     <!-- formulaire d'inscription -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4"></div>
-
-            <div class="col-md-4 background-fond">
+            <div class="mx-auto background-fond">
                 <form>
                     <div class="row">
                         <div class="col">
@@ -50,19 +52,8 @@
                                 <input type="date" class="form-control" id="start" name="trip-start" value="2018-07-22"
                                     min="1908-01-01">
                             </div>
-                        </div>
 
-                        <div class="col">
-                            <!-- prenom -->
-                            <div class="form-group">
-                                <label for="inputPrenom">Prénom</label>
-                                <input type="text" class="form-control" placeholder="Prénom">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
+                            <!-- profil -->
                             <div class="form-group">
                                 <label for="select-profil">Profil</label>
                                 <select class="form-control" id="exampleFormControlSelect1">
@@ -74,7 +65,13 @@
                             </div>
                         </div>
 
-                        <div class="col"></div>
+                        <div class="col">
+                            <!-- prenom -->
+                            <div class="form-group">
+                                <label for="inputPrenom">Prénom</label>
+                                <input type="text" class="form-control" placeholder="Prénom">
+                            </div>
+                        </div>
                     </div>
 
                     <!-- ligne horizontale -->
@@ -107,21 +104,15 @@
 
                     <!-- s'inscrire -->
                     <div class="btn-group btn-custom" role="group" aria-label="Basic example">
-                        <button type="submit" class="btn btn-noir btn-lg btn-custom">S'inscrire</button>
+                        <button type="submit" class="btn btn-noir btn-lg">S'inscrire</button>
                     </div>
                 </form>
             </div>
-
-            <div class="col-md-4"></div>
         </div>
     </div>
 
     <!-- pied -->
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row"></div>
-        </div>
-    </footer>
+    <footer class="footer"></footer>
 
 </body>
 
