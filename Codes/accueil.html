@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Bon coloc</title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style-page-accueil.css">
+</head>
+<!-- https://social.msdn.microsoft.com/Forums/en-US/01b69449-6016-4c36-8f47-559a44bb347e/ltoptiongt-with-background-color-could-i-change-the-color-when-it-is-hover?forum=winappswithhtml5 -->
+
+<body>
+    <!-- En-tete -->
+    <header>
+        <nav class="navbar sticky-top navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img id="logo" src="images/logo-resize.png" alt="BonColoc">
+            </a>
+            <ul>
+                <li class="nav-item mx-1"><a class="nav-link" href="#">Aide</a></li>
+                <li class="nav-item mx-1"><a class="nav-link" href="#">S'inscrire</a></li>
+                <li class="nav-item mx-1"><a class="nav-link" href="index.html">Se connecter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <!-- my-x = margin entre les divs en prenant le top et bottom (cf : https://getbootstrap.com/docs/4.0/utilities/spacing/) -->
+        <div class="container background-fond my-3">
+            <form>
+                <div class="row">
+                    <!-- FILTRE TYPE DE BIEN -->
+                    <div class="col">
+                        <div class="form-group">
+                            <select class="form-control" id="filtreType">
+                                <option selected disabled>Type de bien</option>
+                                <option value=0>Maison</option>
+                                <option value=1>Appartement</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- FILTRE NOMBRE DE PIECES -->
+                    <div class="col">
+                        <div class="form-group">
+                            <select class="form-control" id="filtrePieces">
+                                <option selected disabled>Nombre de pièces</option>
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5 ou +</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- FILTRE AMEUBLEMENT -->
+                    <div class="col">
+                        <div class="form-group">
+                            <select class="form-control" id="filtreMeubles">
+                                <option selected disabled>Ameublement</option>
+                                <option value=0>Meublé</option>
+                                <option value=1>Non-meublé</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- FILTRE LOYER (SLIDER) -->
+                    <!-- https://www.w3schools.com/howto/howto_js_rangeslider.asp -->
+                    <div class="col">
+                        <div class="form-group">
+                            <div class="slidecontainer">
+                                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
