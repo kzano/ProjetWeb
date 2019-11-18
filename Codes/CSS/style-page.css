@@ -10,8 +10,8 @@
 }
 
 /* En-tete */
-#logo {
-    width: 50%;
+.logo {
+    width: 15%;
 }
 
 /* menu horizontal dans l'en-tete */
@@ -109,7 +109,7 @@ footer p {
 
 .img-annonce {
     width: 240px;
-    height: 100%;
+    height: 160px;
 }
 
 .div-img-annonce {
@@ -117,4 +117,47 @@ footer p {
     width: 240px;
     display: flex;
     align-items: center;
+}
+
+.col-annonce {
+    height: 5cm;
+}
+
+.background-black {
+    background-color: black;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.link {
+    font-family: Calibri, sans-serif;
+    font-size: 36pt;
+    font-weight: 700;
+    font-style: italic;
+    color: white;
+    text-align: left;
+}
+
+.mb-3cm {
+    margin-bottom: 3cm;
+}
+
+.nav-link-white {
+    color: white;
+}
+
+.form-control-focus-green:focus {
+    border-color: rgba(126, 239, 104, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 153, 0, 0.8);
+    outline: 0 none;
+}
+
+.btn-focus-green:focus {
+    border-color: rgba(126, 239, 104, 0.8);
+}
+
+.btn-active-green:active {
+    background-color: rgba(126, 239, 104, 0.8);
 }
