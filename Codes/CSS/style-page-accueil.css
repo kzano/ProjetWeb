@@ -126,15 +126,15 @@ select option:focus {
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
-.btn{
+.btn {
     border-color: rgba(153, 153, 153, 0.8);
 }
 
-.btn:focus{
+.btn:focus {
     background-color: rgba(0, 153, 0, 0.8);
 }
 
-.btn:hover{
+.btn:hover {
     border-color: rgba(126, 239, 104, 0.8);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 153, 0, 0.8);
     outline: 0 none;
@@ -158,3 +158,15 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 /* Custom slider prix */
+/* Couleur curseur non touché */
+.custom-range{
+    outline: none;
+}
+
+.custom-range::-moz-range-thumb {
+    background: rgba(0, 153, 0, 0.8);
+}
+/* Couleur curseur enfoncé */
+.custom-range::-moz-range-thumb:active {
+    background: black;
+}
