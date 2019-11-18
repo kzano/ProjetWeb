@@ -9,6 +9,20 @@
     <!-- css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style-page-accueil.css">
+
+    <!-- BOOTSTRAP -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- LIBRAIRIE D'ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <!-- https://social.msdn.microsoft.com/Forums/en-US/01b69449-6016-4c36-8f47-559a44bb347e/ltoptiongt-with-background-color-could-i-change-the-color-when-it-is-hover?forum=winappswithhtml5 -->
 
@@ -35,7 +49,7 @@
                     <!-- FILTRE TYPE DE BIEN -->
                     <div class="col">
                         <div class="form-group">
-                            <select class="form-control" id="filtreType">
+                            <select class="form-control custom-select" id="filtreType">
                                 <option selected disabled>Type de bien</option>
                                 <option value=0>Maison</option>
                                 <option value=1>Appartement</option>
@@ -46,7 +60,7 @@
                     <!-- FILTRE NOMBRE DE PIECES -->
                     <div class="col">
                         <div class="form-group">
-                            <select class="form-control" id="filtrePieces">
+                            <select class="form-control custom-select" id="filtrePieces">
                                 <option selected disabled>Nombre de pièces</option>
                                 <option value=1>1</option>
                                 <option value=2>2</option>
@@ -60,37 +74,72 @@
                     <!-- FILTRE AMEUBLEMENT -->
                     <div class="col">
                         <div class="form-group">
-                            <select class="form-control" id="filtreMeubles">
+                            <select class="form-control custom-select" id="filtreMeubles">
                                 <option selected disabled>Ameublement</option>
                                 <option value=0>Meublé</option>
                                 <option value=1>Non-meublé</option>
                             </select>
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    <!-- FILTRE LOCALISATION -->
+                    <div class="col-md-3">
+                        <div class="form-group mb-0">
+                            <input type="number" class="form-control" placeholder="Code postal" maxlength="5"
+                                pattern="[0-9]{5}" size="5">
+                        </div>
+                    </div>
+
+                    <!-- FILTRE NOMBRE DE COLOCATAIRES -->
+                    <div class="col-md-3">
+                        <div class="form-group mb-0">
+                            <select class="custom-select" id="filtrePieces">
+                                <option selected disabled>Colocataires</option>
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4 ou +</option>
+                            </select>
+                        </div>
+                    </div>
 
                     <!-- FILTRE LOYER (SLIDER) -->
                     <!-- https://www.w3schools.com/howto/howto_js_rangeslider.asp -->
-                    <div class="col">
-                        <div class="form-group">
-                            <div class="slidecontainer">
-                                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <div class="col-md-4">
+                        <div class="form-group text-center h-100 mb-0 justify-content-center">
+                            <div class="slidecontain h-100 w-80">
+                                <input type="range" class="custom-range w-80" id="rangePrix" min="0" max="2000"
+                                    value="1000" step="50">
                             </div>
                         </div>
                     </div>
 
-                    <!-- DROPDOWN -->
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Dropdown button
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="col-md-1 mx-auto text-center">
+                        <div class="form-group text-center h-100 mb-0">
+                            <label id="demo"></label>
                         </div>
-                      </div>
+                    </div>
+
+                    <!-- PRISE EN COMPTE FILTRES-->
+                    <div class="col-md-1 mx-auto">
+                        <div class="form-group text-center mb-0 ">
+                            <button class="btn w-100"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
+
+    <script>
+        var slider = document.getElementById("rangePrix");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+        }
+    </script>
 </body>
