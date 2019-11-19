@@ -161,3 +161,7 @@ footer p {
 .btn-active-green:active {
     background-color: rgba(126, 239, 104, 0.8);
 }
+
+.carousel-lenght {
+    width: 60%;
+}
