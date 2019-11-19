@@ -100,6 +100,10 @@ footer p {
     outline: 0 none;
 }
 
+textarea{
+    resize: none;
+}
+
 .custom-select:focus {
     border-color: rgba(126, 239, 104, 0.8);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 153, 0, 0.8);
@@ -110,6 +114,10 @@ footer p {
 
 .nav-item a {
     color: black;
+}
+
+.navbar{
+    background-color: rgba(220, 220, 220, 0.7);
 }
 
 /* Couleur passage souris sur item de la barre de navigation */
@@ -176,4 +184,8 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 /* Couleur curseur enfoncé */
 .custom-range::-moz-range-thumb:active {
     background: black;
+}
+
+.card-header{
+        color: rgba(0, 153, 0, 0.8);
 }

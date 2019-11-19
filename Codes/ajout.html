@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Bon Coloc</title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style-page-accueil.css">
+
+    <!-- BOOTSTRAP -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- LIBRAIRIE D'ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- En-tete -->
+    <header>
+        <nav class="navbar sticky-top navbar-light">
+            <a class="navbar-brand" href="accueil.html">
+                <img id="logo" src="images/logo-resize.png" alt="BonColoc">
+            </a>
+            <ul>
+                <li class="nav-item mx-1"><a class="nav-link" href="#">Aide</a></li>
+                <li class="nav-item mx-1"><a class="nav-link" href="inscription.html">S'inscrire</a></li>
+                <li class="nav-item mx-1"><a class="nav-link" href="index.html">Se connecter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <!-- my-x = margin entre les divs en prenant le top et bottom (cf : https://getbootstrap.com/docs/4.0/utilities/spacing/) -->
+
+        <div class="container card background-fond my-3">
+            <div class="card-header">
+                <h4>Votre annonce</h4>
+            </div>
+            <form>
+                <div class="card-body background-black">
+
+                    <!-- Ligne principale -->
+                    <div class="row">
+
+                        <!-- Colonne de gauche (description annonce) -->
+                        <div class="col-md-6">
+
+                            <!-- Titre annonce -->
+                            <div class="form-group mb-4">
+                                <label>Titre de l'annonce</label>
+                                <input type="text" class="form-control" id="titreAnnonce" data-toggle="tooltip"
+                                    data-placement="top" title="Titre de l'annonce" placeholder="Titre aguicheur">
+                            </div>
+
+                            <!-- Desription de l'annonce -->
+                            <div class="form-group mb-4">
+                                <label>Texte de l'annonce</label>
+                                <textarea class="form-control" id="textAnnonce" rows="7" data-toggle="tooltip"
+                                    data-placement="top" title="Description de l'annonce"
+                                    placeholder="Description de la colocation"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Colonne de droite (description bien) -->
+                        <div class="col-md-6">
+
+                            <!-- Type de bien -->
+                            <div class="form-group mb-3">
+                                <label>Type de bien</label>
+                                <select class="form-control custom-select" id="filtreType" data-toggle="tooltip"
+                                    data-placement="top" title="Type de bien">
+                                    <option selected disabled>Type</option>
+                                    <option value=0>Maison</option>
+                                    <option value=1>Appartement</option>
+                                </select>
+                            </div>
+
+                            <!-- Nombre de pièces -->
+                            <div class="form-group mb-3">
+                                <label>Pièces</label>
+                                <select class="form-control custom-select" id="filtrePieces" data-toggle="tooltip"
+                                    data-placement="top" title="Nombre de pièces">
+                                    <option selected disabled>Nombre de pièces</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                    <option value=5>5 ou +</option>
+                                </select>
+                            </div>
+
+                            <!-- Ameublement -->
+                            <div class="form-group mb-3">
+                                <label>Ameublement</label>
+                                <select class="form-control custom-select" id="filtreMeubles" data-toggle="tooltip"
+                                    data-placement="top" title="Ameublement">
+                                    <option selected disabled>Meublé ou non</option>
+                                    <option value=0>Meublé</option>
+                                    <option value=1>Non-meublé</option>
+                                </select>
+                            </div>
+
+                            <!-- Nombre de colocataires -->
+                            <div class="form-group mb-3">
+                                <label>Colocataires</label>
+                                <select class="custom-select" id="filtreColoc" data-toggle="tooltip"
+                                    data-placement="top" title="Nombre de colocataire">
+                                    <option selected disabled>Nombre de colocataires</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4 ou +</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seconde ligne -->
+                    <!-- Groupe de 4 colonnes (ville, CP, surface, prix) -->
+                    <div class="row">
+
+                        <!-- Ville -->
+                        <div class="col-md-4">
+                            <label>Localisation</label>
+                            <input type="text" class="form-control" id="localisation" data-toggle="tooltip"
+                                data-placement="top" title="Localisation de la colocation" placeholder="Ville">
+                        </div>
+
+                        <!-- Code postal -->
+                        <div class="col-md-2">
+                            <label>Code postal</label>
+                            <input type="number" class="form-control" maxlength="5" pattern="[0-9]{5}" size="5"
+                                id="codePostal" data-toggle="tooltip" data-placement="top" title="Code postal"
+                                placeholder="ex : 33400">
+                        </div>
+
+                        <!-- Surface -->
+                        <div class="col-md-3">
+                            <label>Surface</label>
+
+                            <div class="input-group">
+                                <input type="number" class="form-control" placeholder="Surface min" maxlength="5"
+                                    pattern="[0-9]{3}" size="5" data-toggle="tooltip" data-placement="top"
+                                    title="Surface min. (m²)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">m²</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label>Prix</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" placeholder="Loyer" maxlength="5"
+                                    pattern="[0-9]{3}" size="5" data-toggle="tooltip" data-placement="top"
+                                    title="Prix de loyer en €">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">€</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Troisìème ligne (ajout photos) -->
+                    <div class="row my-5">
+                        <!-- Photo 1 -->
+                        <div class="col-md-4 text-center">
+                            <i class="fa fa-3x fa-camera"></i>
+                        </div>
+
+                        <!-- Photo 2 -->
+                        <div class="col-md-4 text-center">
+                            <i class="fa fa-3x fa-camera"></i>
+                        </div>
+
+                        <!-- Photo 3 -->
+                        <div class="col-md-4 text-center">
+                            <i class="fa fa-3x fa-camera"></i>
+                        </div>
+                    </div>
+
+                    <!-- Bouton envoyer formulaire -->
+                    <div class="form-row">
+                        <div class="text-center w-100">
+                            <button type="submit" class="btn w-25" value="Submit" data-toggle="tooltip"
+                                data-placement="top" title="Déposer l'annonce"><i class="fa fa-lg fa-send"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        var titre = document.getElementById("titreAnnonce").nodeValue
+        //TODO Border rouges si texte vide
+    </script>
+</body>
