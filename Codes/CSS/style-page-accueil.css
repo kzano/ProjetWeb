@@ -114,9 +114,16 @@ footer p {
 
 /* Couleur passage souris sur item de la barre de navigation */
 
-.nav-item:hover {
-    background-color: #009900;
+.nav-item:hover{
     border-radius: 5px;
+    border-color: rgba(126, 239, 104, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 153, 0, 0.8);
+    outline: 0 none;
+}
+
+.nav-item:active {
+    background-color: #009900;
+    border-radius: 10px;
 }
 
 select option:focus {
