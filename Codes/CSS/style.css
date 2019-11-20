@@ -67,6 +67,10 @@ textarea {
     margin-top: 3cm;
 }
 
+.footer-copyright{
+    color: white;
+}
+
 .background-fond {
     -webkit-box-shadow: -5px 3px 18px 3px rgba(220, 220, 220, 0.7);
     box-shadow: -5px 3px 18px 3px rgba(220, 220, 220, 0.7);
@@ -153,6 +157,7 @@ select option:focus {
 .btn-noir {
     background-color: black;
     border-width: 1px;
+    border-radius: 4px;
     border-color: white;
     color: white;
 }
