@@ -242,3 +242,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     font-weight: 700;
     
 }
+
+/* titre dans la page "annonce" */
+.card-header h2 {
+    color: black;
+    font-style: 700;
+}
