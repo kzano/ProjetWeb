@@ -32,26 +32,8 @@ li {
     float: right;
 }
 
-/* bouton noir */
-
-.btn-noir {
-    background-color: black;
-    border-width: 1px;
-    border-color: white;
-    color: white;
-}
-.btn-noir:hover {
-    background-color: green;
-    border-width: 1px;
-    border-color: white;
-    color: white;
-}
-
-/* centrage des boutons principaux */
-
-.btn-custom {
-    margin: 0 auto;
-    width: 100%;
+h4 {
+    color: rgba(0, 153, 0, 0.8);
 }
 
 #paragrapheInscription {
@@ -76,6 +58,10 @@ footer p {
     color: white;
 }
 
+textarea {
+    resize: none;
+}
+
 .footer {
     position: relative;
     margin-top: 3cm;
@@ -98,9 +84,7 @@ footer p {
     outline: 0 none;
 }
 
-textarea{
-    resize: none;
-}
+/* SELECT */
 
 .custom-select:focus {
     border-color: rgba(126, 239, 104, 0.8);
@@ -108,6 +92,14 @@ textarea{
     outline: 0 none;
 }
 
+select option:focus {
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* NAVBAR */
 /* Police d'écriture en noir pour les item de la barre de navigation */
 
 .nav-item a {
@@ -118,33 +110,29 @@ textarea{
     background-color: rgba(220, 220, 220, 0.7);
 }
 
-/* Couleur passage souris sur item de la barre de navigation */
+/* lien de la barre de navigation */
 
-.nav-item:hover{
-    border-radius: 5px;
-    border-color: rgba(126, 239, 104, 0.8);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 153, 0, 0.8);
-    outline: 0 none;
+.nav-link-white {
+    color: white;
 }
 
-.nav-item:active {
-    background-color: #009900;
-    border-radius: 10px;
+.nav-link-white:hover {
+    color: rgba(0, 153, 0, 0.8);
 }
 
-.nav-item:focus {
-    background-color: #009900;
-    border-radius: 10px;
+/* style du lien du logo dans la barre de navigation */
+
+.link {
+    font-family: Calibri, sans-serif;
+    font-size: 36pt;
+    font-weight: 700;
+    font-style: italic;
+    color: white;
+    text-align: left;
 }
 
-select option:focus {
-    margin: 40px;
-    background: rgba(0, 0, 0, 0.3);
-    color: #fff;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-}
+/* BOUTONS */
 
-/* bouton */ 
 .btn {
     border-color: rgba(153, 153, 153, 0.8);
 }
@@ -153,12 +141,34 @@ select option:focus {
     background-color: rgba(0, 153, 0, 0.8);
 }
 
-
 .btn:hover {
     background-color: rgba(0, 153, 0, 0.8);
     border-color: rgba(126, 239, 104, 0.8);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 153, 0, 0.8);
     outline: 0 none;
+}
+
+/* bouton noir */
+
+.btn-noir {
+    background-color: black;
+    border-width: 1px;
+    border-color: white;
+    color: white;
+}
+
+.btn-noir:hover {
+    background-color: green;
+    border-width: 1px;
+    border-color: white;
+    color: white;
+}
+
+/* centrage des boutons principaux */
+
+.btn-custom {
+    margin: 0 auto;
+    width: 100%;
 }
 
 .dropdown-toggle {
@@ -179,23 +189,26 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 /* Custom slider prix */
+
 /* Couleur curseur non touché */
-.custom-range{
+
+.custom-range {
     outline: none;
 }
 
 .custom-range::-moz-range-thumb {
     background: rgba(0, 153, 0, 0.8);
 }
+
 /* Couleur curseur enfoncé */
+
 .custom-range::-moz-range-thumb:active {
     background: black;
 }
 
-.card-header{
-        color: rgba(0, 153, 0, 0.8);
+.card-header {
+    color: rgba(0, 153, 0, 0.8);
 }
-
 
 .form-control:focus {
     border-color: rgba(0, 153, 0, 0.8);
@@ -204,46 +217,33 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 /* dimensions d'une image contenue dans une ligne de previsualisation de l'annonce */
+
 .img-annonce {
     width: 240px;
     height: 160px;
 }
 
 /* hauteur de chaque ligne de la prévisualisation d'une annonce */
+
 .col-annonce {
     height: 5cm;
 }
 
-/* style du lien du logo dans la barre de navigation */
-.link {
-    font-family: Calibri, sans-serif;
-    font-size: 36pt;
-    font-weight: 700;
-    font-style: italic;
-    color: white;
-    text-align: left;
-}
- /* lien de la barre de navigation */
-.nav-link-white {
-    color: white;
-}
-.nav-link-white:hover {
-    color: rgba(126, 239, 104, 0.8);
-}
-
 /* taille du carousel */
+
 .carousel-lenght {
     width: 60%;
 }
 
 /* couleur du texte correspondant au prix */
+
 .span-prix {
     color: #009900;
     font-weight: 700;
-    
 }
 
 /* titre dans la page "annonce" */
+
 .card-header h2 {
     color: black;
     font-style: 700;
