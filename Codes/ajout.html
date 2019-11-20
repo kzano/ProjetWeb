@@ -187,10 +187,11 @@
 
                         <!-- Photo 3 -->
                         <div class="col-md-4 text-center">
-                            <div class="file btn">
+                            <label for="file-upload" class="custom-file-upload">
                                 <i class="fa fa-3x fa-camera"></i>
-                                <input type="file" name="file" accept=".png, .jpeg" />
-                            </div>
+                            </label>
+                            <input id="file-upload" type="file" name="photo3" accept=".png, .jpeg" />
+                            <!--<button type="file" name="photo3" accept=".png, .jpeg" ></button>-->
                         </div>
                     </div>
 
@@ -244,6 +245,13 @@
 
     <script>
         //TODO Border rouges si texte vide
+        function checkValidate(idElement){
+            var element = document.getElementById(idElement);
+            if (element.isEmpty()){
+
+            }
+            element.classList.add("is-valid");
+        }
     </script>
 </body>
 

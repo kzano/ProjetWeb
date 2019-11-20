@@ -169,6 +169,12 @@ select option:focus {
     color: white;
 }
 
+.btn-photo{
+    border-color: rgba(37, 39, 41, 0.8);
+    border-width: 5px;
+    border-radius: 4px;
+}
+
 /* centrage des boutons principaux */
 
 .btn-custom {
@@ -191,6 +197,15 @@ input[type="number"] {
 
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
+}
+
+/* Modification ajout photo */
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload{
+    cursor: pointer;
 }
 
 /* Custom slider prix */
