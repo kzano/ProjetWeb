@@ -23,6 +23,10 @@
 
     <!-- LIBRAIRIE D'ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../Codes/js/fonctions.js"></script>
 </head>
 
 <body>
@@ -49,7 +53,7 @@
                     <div class="form-group">
                         <!-- si l'identidiant est invalide, ajouter la classe "is-invalid" dans l'input suivant : -->
                         <label for="inputIdentifiant">Identifiant</label>
-                        <input type="text" class="form-control is-invalid" id="inputIdentifiant" aria-describedby="emailHelp"
+                        <input type="text" class="form-control" id="inputIdentifiant" aria-describedby="emailHelp"
                             placeholder="Entrer votre identifiant">
                         <div class="invalid-feedback" id="div-verification-mdp">L'identifiant que vous avez saisi est incorrect.</div>
                     </div>
@@ -57,7 +61,7 @@
                     <div class="form-group">
                         <label for="inputPassword">Mot de passe</label>
                         <!-- si le mot de passe est invalide, ajouter la classe "is-invalid" dans l'input suivant : -->
-                        <input type="password" class="form-control is-invalid" id="inputPassword"
+                        <input type="password" class="form-control" id="inputPassword"
                             placeholder="Entrer votre mot de passe">
                         <small id="emailHelp" class="form-text text-muted">Entrer votre mot de passe à l'abri des
                             regards indiscrets.</small>
