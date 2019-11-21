@@ -205,6 +205,7 @@ input[type="file"] {
 }
 
 .custom-file-upload{
+    border: solid #212529 4px;
     cursor: pointer;
 }
 
@@ -224,10 +225,6 @@ input[type="file"] {
 
 .custom-range::-moz-range-thumb:active {
     background: black;
-}
-
-.card-header {
-    color: rgba(0, 153, 0, 0.8);
 }
 
 .form-control:focus {
@@ -267,4 +264,8 @@ input[type="file"] {
 .card-header h2 {
     color: black;
     font-style: 700;
+}
+
+.card-header {
+    color: rgba(0, 153, 0, 0.8);
 }
