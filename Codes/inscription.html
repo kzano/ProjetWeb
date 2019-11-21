@@ -16,13 +16,13 @@
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- LIBRAIRIE D'ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -52,47 +52,99 @@
             <div class="mx-auto background-fond">
                 <form id="form-inscription" form method="POST" action="">
                     <div class="row">
-                        <div class="col">
+                        <h4>Informations personnelles</h4>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-sm-6">
                             <!-- nom -->
                             <div class="form-group">
                                 <label for="inputNom">Nom</label>
-                                <input type="text" class="form-control" id="inputNom" placeholder="Nom">
-                            </div>
-
-                            <!-- date de naissance -->
-                            <div class="form-group">
-                                <label for="inputDateNaissance">Date de naissance</label>
-                                <input type="date" class="form-control" id="start" name="trip-start" value="2018-07-22"
-                                    min="1908-01-01">
-                            </div>
-
-                            <!-- profil -->
-                            <div class="form-group">
-                                <label for="select-profil">Profil</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option selected disabled>Type</option>
-                                    <option>Maison</option>
-                                    <option>Appartement</option>
-                                    <option>Chambre</option>
-                                </select>
-                            </div>
-
-                            <!-- preferences -->
-
-
-                            <!-- numero de telephone -->
-                            <div class="form-group">
-                                <label for="inputTelephone">Numéro de téléphone</label>
-                                <input type="text" class="form-control" id="inputTelephone"
-                                    placeholder="Numéro de téléphone">
+                                <input type="text" class="form-control" id="inputNom" placeholder="Nom" required>
                             </div>
                         </div>
 
-                        <div class="col">
+                        <div class="col-sm-6">
                             <!-- prenom -->
                             <div class="form-group">
                                 <label for="inputPrenom">Prénom</label>
-                                <input type="text" class="form-control" placeholder="Prénom">
+                                <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputDateNaissance">Date de naissance</label>
+                                <input type="date" class="form-control" id="start" name="trip-start" value="2018-07-22"
+                                    min="1908-01-01" required>
+                            </div>
+                        </div>
+                        <!-- date de naissance -->
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputTelephone">Numéro de téléphone</label>
+                                <input type="number" class="form-control" id="inputTelephone"
+                                    placeholder="Numéro de téléphone" maxlength="10" pattern="[0-9]{10}" required>
+                            </div>
+                        </div>
+                        <!-- numero de telephone -->
+
+                    </div>
+
+
+                    <!-- ligne horizontale -->
+                    <div class="row">
+                        <hr width="100%">
+                        <h4>Centres d'intérêts</h4>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="switchSport">
+                                <label class="custom-control-label" for="switchSport">Sport</label>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="switchMusique">
+                                <label class="custom-control-label" for="switchMusique">Musique</label>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="switchLecture">
+                                <label class="custom-control-label" for="switchLecture">Lecture</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="switchArts">
+                                <label class="custom-control-label" for="switchArts">Arts</label>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="switchFête">
+                                <label class="custom-control-label" for="switchFête">Fête</label>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="switchJV">
+                                <label class="custom-control-label" for="switchJV">Jeux-vidéos</label>
                             </div>
                         </div>
                     </div>
@@ -100,29 +152,30 @@
                     <!-- ligne horizontale -->
                     <div class="row">
                         <hr width="100%">
+                        <h4>Compte</h4>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="inputIdentifiant">Identifiant</label>
                         <input type="text" class="form-control" id="inputIdentifiant" aria-describedby="emailHelp"
-                            placeholder="Identifiant">
+                            placeholder="Identifiant" required>
                     </div>
 
                     <!-- adresse de courrier electronique -->
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="inputCourriel">Adresse de courrier électronique</label>
-                        <input type="email" class="form-control" id="inputCourriel" placeholder="nom@gmail.com">
+                        <input type="email" class="form-control" id="inputCourriel" placeholder="nom@mail.com" required>
                     </div>
 
                     <!-- mot de passe -->
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="inputPassword">Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
                     </div>
 
                     <div class="form-group">
                         <label for="inputPassword">Confirmer votre mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
                     </div>
 
                     <!-- s'inscrire -->
