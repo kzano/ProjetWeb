@@ -26,6 +26,10 @@
 
     <!-- LIBRAIRIE D'ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../Codes/js/connexion.js"></script>
 </head>
 
 <body>
@@ -37,7 +41,6 @@
             </a>
             <ul>
                 <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="#">Aide</a></li>
-                <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="#">S'inscrire</a></li>
                 <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="index.html">Se connecter</a></li>
             </ul>
         </nav>
@@ -47,13 +50,13 @@
     <div class="container-fluid align-middle">
         <div class="row">
             <div class="mx-auto background-fond">
-                <form>
+                <form id="form-inscription" form method="POST" action="">
                     <div class="row">
                         <div class="col">
                             <!-- nom -->
                             <div class="form-group">
                                 <label for="inputNom">Nom</label>
-                                <input type="text" class="form-control" placeholder="Nom">
+                                <input type="text" class="form-control" id="inputNom" placeholder="Nom">
                             </div>
 
                             <!-- date de naissance -->
@@ -67,11 +70,21 @@
                             <div class="form-group">
                                 <label for="select-profil">Profil</label>
                                 <select class="form-control" id="exampleFormControlSelect1">
-                                    <option></option>
+                                    <option selected disabled>Type</option>
                                     <option>Maison</option>
                                     <option>Appartement</option>
                                     <option>Chambre</option>
                                 </select>
+                            </div>
+
+                            <!-- preferences -->
+
+
+                            <!-- numero de telephone -->
+                            <div class="form-group">
+                                <label for="inputTelephone">Numéro de téléphone</label>
+                                <input type="text" class="form-control" id="inputTelephone"
+                                    placeholder="Numéro de téléphone">
                             </div>
                         </div>
 
