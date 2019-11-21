@@ -1,31 +1,28 @@
 $(document).ready(function () {
 
+    // recupere l'objet "$('#inputIdentifiant')" jquery dans la variable "$identifiant"
     var $identifiant = $('#inputIdentifiant');
 
-    // premier point d'insertion
-    $('#inputIdentifiant').focus();
-
-    $identifiant.keydown(function(){
-        $("#inputIdentifiant").css("background-color", "yellow");
-      });
-
-    
-
     // ajoute la classe "is-invalid"
-    function ajoutClassErreur(inputName) {
-        $(inputName).addClass("is-invalid");
+    function addClassErreur(inputName) {
+        $(inputName).addClass('is-invalid');
     };
 
     // supprime la classe "is-invalid"
-    function suppClassErreur(inputName) {
-        $(inputName).removeClass("is-invalid");
+    function removeClassErreur(inputName) {
+        $(inputName).removeClass('is-invalid');
     };
 
-    $identifiant.keyup(function () {
-        if ($(this).val().length < 5) { // si la chaîne de caractères est inférieure à 5
-            ajoutClassErreur("#inputIdentifiant");
-        }
-    });
+    // ajoute la classe "is-valid"
+    function addClassValid(inputName) {
+        $(inputName).addClass('is-valid');
+    };
 
-    console.log($identifiant);
+    // supprime la classe "is-valid"
+    function removeClassValid(inputName) {
+        $(inputName).removeClass('is-valid');
+    };
+
+    // premier point d'insertion a l'ouverture de la page d'accueil
+    $('#inputIdentifiant').focus();
 });
