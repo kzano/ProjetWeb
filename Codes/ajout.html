@@ -60,7 +60,8 @@
                             <div class="form-group mb-4">
                                 <label>Titre de l'annonce</label>
                                 <input type="text" class="form-control" id="titreAnnonce" data-toggle="tooltip"
-                                    data-placement="top" title="Titre de l'annonce" placeholder="Titre aguicheur">
+                                    data-placement="top" title="Titre de l'annonce" placeholder="Titre aguicheur"
+                                    required>
                             </div>
 
                             <!-- Desription de l'annonce -->
@@ -68,7 +69,8 @@
                                 <label>Texte de l'annonce</label>
                                 <textarea class="form-control" id="textAnnonce" rows="7" data-toggle="tooltip"
                                     data-placement="top" title="Description de l'annonce"
-                                    placeholder="Description de la colocation et du colocataire recherché"></textarea>
+                                    placeholder="Description de la colocation et du colocataire recherché"
+                                    required></textarea>
                             </div>
                         </div>
 
@@ -79,7 +81,7 @@
                             <div class="form-group mb-3">
                                 <label>Type de bien</label>
                                 <select class="form-control custom-select" id="filtreType" data-toggle="tooltip"
-                                    data-placement="top" title="Type de bien">
+                                    data-placement="top" title="Type de bien" required>
                                     <option selected disabled>Type</option>
                                     <option value=0>Maison</option>
                                     <option value=1>Appartement</option>
@@ -90,7 +92,7 @@
                             <div class="form-group mb-3">
                                 <label>Pièces</label>
                                 <select class="form-control custom-select" id="filtrePieces" data-toggle="tooltip"
-                                    data-placement="top" title="Nombre de pièces">
+                                    data-placement="top" title="Nombre de pièces" required>
                                     <option selected disabled>Nombre de pièces</option>
                                     <option value=1>1</option>
                                     <option value=2>2</option>
@@ -104,7 +106,7 @@
                             <div class="form-group mb-3">
                                 <label>Ameublement</label>
                                 <select class="form-control custom-select" id="filtreMeubles" data-toggle="tooltip"
-                                    data-placement="top" title="Ameublement">
+                                    data-placement="top" title="Ameublement" required>
                                     <option selected disabled>Meublé ou non</option>
                                     <option value=0>Meublé</option>
                                     <option value=1>Non-meublé</option>
@@ -115,7 +117,7 @@
                             <div class="form-group mb-3">
                                 <label>Colocataires</label>
                                 <select class="custom-select" id="filtreColoc" data-toggle="tooltip"
-                                    data-placement="top" title="Nombre de colocataire">
+                                    data-placement="top" title="Nombre de colocataire" required>
                                     <option selected disabled>Nombre de colocataires</option>
                                     <option value=1>1</option>
                                     <option value=2>2</option>
@@ -129,12 +131,11 @@
                     <!-- Seconde ligne -->
                     <!-- Groupe de 4 colonnes (ville, CP, surface, prix) -->
                     <div class="row">
-
                         <!-- Ville -->
                         <div class="col-md-4">
                             <label>Localisation</label>
                             <input type="text" class="form-control" id="localisation" data-toggle="tooltip"
-                                data-placement="top" title="Localisation de la colocation" placeholder="Ville">
+                                data-placement="top" title="Localisation de la colocation" placeholder="Ville" required>
                         </div>
 
                         <!-- Code postal -->
@@ -142,7 +143,7 @@
                             <label>Code postal</label>
                             <input type="number" class="form-control" maxlength="5" pattern="[0-9]{5}" size="5"
                                 id="codePostal" data-toggle="tooltip" data-placement="top" title="Code postal"
-                                placeholder="ex : 33400">
+                                placeholder="ex : 33400" required>
                         </div>
 
                         <!-- Surface -->
@@ -151,7 +152,7 @@
                             <div class="input-group">
                                 <input type="number" class="form-control" placeholder="Surface min" maxlength="5"
                                     pattern="[0-9]{3}" size="5" data-toggle="tooltip" data-placement="top"
-                                    title="Surface min. (m²)">
+                                    title="Surface min. (m²)" required>
                                 <div class="input-group-append">
                                     <span class="input-group-text">m²</span>
                                 </div>
@@ -163,8 +164,8 @@
                             <label>Prix</label>
                             <div class="input-group">
                                 <input type="number" class="form-control" placeholder="Loyer" maxlength="5"
-                                    pattern="[0-9]{3}" size="5" data-toggle="tooltip" data-placement="top"
-                                    title="Prix de loyer en €">
+                                    pattern="[0-9]{3,}" size="5" data-toggle="tooltip" data-placement="top"
+                                    title="Prix de loyer en €" required>
                                 <div class="input-group-append">
                                     <span class="input-group-text">€</span>
                                 </div>
@@ -174,38 +175,47 @@
 
                     <!-- Troisìème ligne (ajout photos) -->
                     <div class="row my-5">
-
                         <!-- Photo 1 -->
-                        <div class="col-md-4 text-center">
-                            <i class="fa fa-3x fa-camera"></i>
+                        <div class="col-md-3 mx-auto text-center">
+                            <label for="file-upload" class="custom-file-upload p-4 rounded">
+                                <i class="fa fa-3x fa-camera"></i>
+                            </label>
+                            <input id="file-upload" type="file" name="photo1" accept=".png, .jpeg" />
+                            <!--<button type="file" name="photo3" accept=".png, .jpeg" ></button>-->
                         </div>
 
                         <!-- Photo 2 -->
-                        <div class="col-md-4 text-center">
-                            <i class="fa fa-3x fa-camera"></i>
+                        <div class="col-md-3 mx-auto text-center">
+                            <label for="file-upload" class="custom-file-upload p-4 rounded">
+                                <i class="fa fa-3x fa-camera"></i>
+                            </label>
+                            <input id="file-upload" type="file" name="photo2" accept=".png, .jpeg" />
+                            <!--<button type="file" name="photo3" accept=".png, .jpeg" ></button>-->
                         </div>
 
                         <!-- Photo 3 -->
-                        <div class="col-md-4 text-center">
-                            <label for="file-upload" class="custom-file-upload">
+                        <div class="col-md-3 mx-auto text-center">
+                            <label for="file-upload" class="custom-file-upload p-4 rounded">
                                 <i class="fa fa-3x fa-camera"></i>
                             </label>
                             <input id="file-upload" type="file" name="photo3" accept=".png, .jpeg" />
                             <!--<button type="file" name="photo3" accept=".png, .jpeg" ></button>-->
                         </div>
+
                     </div>
 
                     <!-- Bouton envoyer formulaire -->
                     <div class="form-row">
                         <div class="text-center w-100">
                             <button type="submit" class="btn-noir w-25 py-2" value="Submit" data-toggle="tooltip"
-                                data-placement="top" title="Déposer l'annonce"><i class="fa fa-lg fa-send"></i></button>
+                                data-placement="top" title="Déposer l'annonce"
+                                onclick="checkValidate(document.getElementById(textAnnonce))"><i
+                                    class="fa fa-lg fa-send"></i></button>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-
     </div>
 
     <footer class="footer bg-dark mt-5">
@@ -245,9 +255,10 @@
 
     <script>
         //TODO Border rouges si texte vide
-        function checkValidate(idElement){
+        function checkValidate(idElement) {
+            console.log("Test");
             var element = document.getElementById(idElement);
-            if (element.isEmpty()){
+            if (element.isEmpty()) {
 
             }
             element.classList.add("is-valid");
