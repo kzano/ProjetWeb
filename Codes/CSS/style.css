@@ -204,9 +204,14 @@ input[type="file"] {
     display: none;
 }
 
+/* Bouton ajout photo */
 .custom-file-upload{
     border: solid #212529 4px;
     cursor: pointer;
+}
+
+.custom-file-upload:hover{
+    border-color: rgba(0, 153, 0, 0.8);
 }
 
 /* Custom slider prix */
