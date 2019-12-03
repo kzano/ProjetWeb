@@ -19,9 +19,9 @@ Route::get('/boncoloc', 'pageConnexion@getPage');
 
 Route::post('/boncoloc', 'pageConnexion@aldo');
 
-Route::post('/verif', 'connexionController@postConnexion');
+Route::post('/verif', 'connexionController@postConnexion')->middleware('App\Http\Middleware\verifConnexion');
 
-Route::get('/boncoloc/accueil', 'accueilController@getPage');
+Route::get('/boncoloc/accueil', 'accueilController@getPage')->middleware('App\Http\Middleware\auth');
 
 Route::get('/boncoloc/notconnect', 'pageConnexion@getPagePbConnexion');
 

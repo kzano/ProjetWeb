@@ -8,7 +8,8 @@ class decoController extends Controller
 {
     public function controleDisconnect(Request $requete)
     {
-        $requete->session()->put('log', '');
-        return redirect('/boncoloc');
+        auth()->logout();
+
+        return redirect("/boncoloc");
     }
 }

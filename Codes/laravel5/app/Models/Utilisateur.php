@@ -72,6 +72,11 @@ class Utilisateur extends Model implements Authenticatable
     {
         return $this->Mdp;
 	}
+
+	public function getRememberTokenName()
+    {
+        return '';
+    }
 	
 	public function locations()
 	{

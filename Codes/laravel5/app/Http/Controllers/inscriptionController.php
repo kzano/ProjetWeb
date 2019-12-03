@@ -46,6 +46,10 @@ class inscriptionController extends Controller
         $utilisateur->TypeProfil =$requete->input('profil');
 
         $utilisateur->save();
+
+        sleep(3);
+
+        return redirect("/boncoloc");
     }
 
 }
