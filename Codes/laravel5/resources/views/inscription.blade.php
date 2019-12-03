@@ -8,10 +8,10 @@
     <title>BonColoc</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="{{asset('CSS/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('CSS/style.css')}}">
 
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="{{asset('images/favicon.png')}}">
 
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -37,10 +37,10 @@
     <header>
         <nav class="navbar navbar-dark bg-dark mb-5">
             <a class="navbar-brand nav-link-white link align-bottom" href="#">
-                <img class="logo mr-3" src="images/logo-blanc.png" alt="BonColoc">BonColoc
+                <img class="logo mr-3" src="{{asset('images/logo-blanc.png')}}" alt="BonColoc">BonColoc
             </a>
             <ul>
-                <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="#">Aide</a></li>
+                <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="http://127.0.0.1/laravel5/public/boncoloc">Se connecter</a></li>
             </ul>
         </nav>
     </header>
@@ -50,6 +50,7 @@
         <div class="row">
             <div class="mx-auto background-fond">
                 <form id="form-inscription" method="POST" action="http://127.0.0.1/laravel5/public/boncoloc/ajoutUser">
+                    @csrf
                     <div class="row">
                         <h4>Informations personnelles</h4>
                     </div>
@@ -171,6 +172,8 @@
                         <label for="inputPassword">Mot de passe</label>
                         <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
                     </div>
+
+                    
                     <!--
                     <div class="form-group">
                         <label for="inputPassword">Confirmer votre mot de passe</label>
