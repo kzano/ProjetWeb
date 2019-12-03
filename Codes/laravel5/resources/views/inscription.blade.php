@@ -49,7 +49,7 @@
     <div class="container-fluid align-middle">
         <div class="row">
             <div class="mx-auto background-fond">
-                <form id="form-inscription" method="POST" action="http://127.0.0.1/laravel5/public/boncoloc/ajoutUser">
+                <form id="form-inscription" method="POST" action="">
                     @csrf
                     <div class="row">
                         <h4>Informations personnelles</h4>
@@ -62,7 +62,7 @@
                             <!-- nom -->
                             <div class="form-group">
                                 <label for="inputNom">Nom</label>
-                                <input type="text" class="form-control" id="inputNom" placeholder="Nom" required>
+                                <input name="lastname" type="text" class="form-control" id="inputNom" placeholder="Nom" required>
                             </div>
                         </div>
 
@@ -70,7 +70,7 @@
                             <!-- prenom -->
                             <div class="form-group">
                                 <label for="inputPrenom">Prénom</label>
-                                <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom" required>
+                                <input name="name" type="text" class="form-control" id="inputPrenom" placeholder="Prénom" required>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="inputDateNaissance">Date de naissance</label>
-                                <input type="date" class="form-control" id="start" name="trip-start" value="2018-07-22"
+                                <input name="date" type="date" class="form-control" id="start" name="trip-start" value="2018-07-22"
                                     min="1908-01-01" required>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="inputTelephone">Numéro de téléphone</label>
-                                <input type="number" class="form-control" id="inputTelephone"
+                                <input name="phone" type="number" class="form-control" id="inputTelephone"
                                     placeholder="Numéro de téléphone" maxlength="10" pattern="[0-9]{10}" required>
                             </div>
                         </div>
@@ -106,21 +106,21 @@
                     <div class="row mb-3">
                         <div class="col-sm-4">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="switchSport">
+                                <input name="sport" type="checkbox" class="custom-control-input" id="switchSport">
                                 <label class="custom-control-label" for="switchSport">Sport</label>
                             </div>
                         </div>
 
                         <div class="col-sm-4">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="switchMusique">
+                                <input name="musique" type="checkbox" class="custom-control-input" id="switchMusique">
                                 <label class="custom-control-label" for="switchMusique">Musique</label>
                             </div>
                         </div>
 
                         <div class="col-sm-4">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="switchLecture">
+                                <input name="lecture" type="checkbox" class="custom-control-input" id="switchLecture">
                                 <label class="custom-control-label" for="switchLecture">Lecture</label>
                             </div>
                         </div>
@@ -129,21 +129,21 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="switchArts">
+                                <input name="arts" type="checkbox" class="custom-control-input" id="switchArts">
                                 <label class="custom-control-label" for="switchArts">Arts</label>
                             </div>
                         </div>
 
                         <div class="col-sm-4">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="switchFête">
+                                <input name="fete" type="checkbox" class="custom-control-input" id="switchFête">
                                 <label class="custom-control-label" for="switchFête">Fête</label>
                             </div>
                         </div>
 
                         <div class="col-sm-4">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="switchJV">
+                                <input name="j-v" type="checkbox" class="custom-control-input" id="switchJV">
                                 <label class="custom-control-label" for="switchJV">Jeux-vidéos</label>
                             </div>
                         </div>
@@ -157,29 +157,29 @@
 
                     <div class="form-group mb-2">
                         <label for="inputIdentifiant">Identifiant</label>
-                        <input type="text" class="form-control" id="inputIdentifiant" aria-describedby="emailHelp"
+                        <input name="login" type="text" class="form-control" id="inputIdentifiant" aria-describedby="emailHelp"
                             placeholder="Identifiant" required>
                     </div>
 
                     <!-- adresse de courrier electronique -->
                     <div class="form-group mb-2">
                         <label for="inputCourriel">Adresse de courrier électronique</label>
-                        <input type="email" class="form-control" id="inputCourriel" placeholder="nom@mail.com" required>
+                        <input name="mail" type="email" class="form-control" id="inputCourriel" placeholder="nom@mail.com" required>
                     </div>
 
                     <!-- mot de passe -->
                     <div class="form-group">
                         <label for="inputPassword">Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
+                        <input name="mdp" type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
                     </div>
 
-                    
-                    <!--
                     <div class="form-group">
-                        <label for="inputPassword">Confirmer votre mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
+                        <label>Votre profil</label>
+                        <SELECT name="profil">
+                        <option value="publication">Je publie une colocation
+                        <option value="cherche">Je recherche une coloc
+                        </SELECT>
                     </div>
-                    -->
 
                     <!-- s'inscrire -->
                     <div class="btn-group btn-custom" role="group" aria-label="Basic example">

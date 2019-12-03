@@ -8,6 +8,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as BasicAuthenticatable;
 
 /**
  * Class Utilisateur
@@ -32,8 +34,10 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class Utilisateur extends Model
+class Utilisateur extends Model implements Authenticatable
 {
+	use BasicAuthenticatable;
+
 	protected $table = 'utilisateur';
 	protected $primaryKey = 'IdUtilisateur';
 	public $timestamps = false;
@@ -64,6 +68,11 @@ class Utilisateur extends Model
 		'JeuxVideo'
 	];
 
+	public function getAuthPassword()
+    {
+        return $this->Mdp;
+	}
+	
 	public function locations()
 	{
 		return $this->hasMany(Location::class, 'IdUtilisateur');

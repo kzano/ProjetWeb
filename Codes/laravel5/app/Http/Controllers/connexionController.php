@@ -9,20 +9,14 @@ class connexionController extends Controller
 {
     public function postConnexion(Request $requete)
     {
-        $log = $requete->input('login');
-        $mdp = $requete->input('mdp');
+        $resultat = auth()->attempt([
+            'Login' => $requete->input('login'),
+            'password' =>    $requete->input('mdp')
+        ]);
 
-        $resultatLog = User::where('Login', $log)->get();    
-
-        if(empty($resultatLog) | $resultatLog =="[]") 
+        if($resultat = true)
         {
-            $requete->session()->put('log', 'erreurConnexion');
-            return redirect("/boncoloc");
-        }
-
-        else if($resultatLog[0]->Mdp == $mdp) 
-        {
-            $requete->session()->put('log', $log);
+            $requete->session()->put('log', $requete->input('login'));
             return redirect("/boncoloc/accueil");
         }
         else
@@ -30,6 +24,5 @@ class connexionController extends Controller
             $requete->session()->put('log', 'erreurConnexion');
             return redirect("/boncoloc");
         }
-        //else return view('accueil');
     }
 }
