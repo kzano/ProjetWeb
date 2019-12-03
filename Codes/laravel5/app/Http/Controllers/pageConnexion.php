@@ -16,4 +16,8 @@ class pageConnexion extends Controller
         
         return view('index', ['class' => $classe]);
     }
+
+    public function aldo(){
+        return redirect('/boncoloc/inscription');
+    }
 }

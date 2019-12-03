@@ -12,4 +12,6 @@ class accueilController extends Controller
         if($login == '' | $login == 'erreurConnexion') return redirect('/boncoloc');
         return view('accueil', ['login' => $login]);
     }
+
+
 }

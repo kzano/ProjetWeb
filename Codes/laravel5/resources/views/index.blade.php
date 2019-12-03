@@ -79,11 +79,11 @@
 
                 <p id="paragrapheInscription">Vous n'êtes pas encore inscrit ou inscrite ?</p>
 
-                <form method="POST" action="http://127.0.0.1/laravel5/public/inscription">
+                    <form method="POST" action="">
+                    @csrf
                     <div class="btn-group btn-custom" role="group" aria-label="Basic example">
                         <button type="submit" class="btn btn-noir btn-lg btn-custom">S'inscrire</button>
-                    </div>
-                </form>
+                        </form>
 
             </div>
             <div class="col-md-4"></div>

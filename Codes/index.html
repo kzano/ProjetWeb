@@ -50,7 +50,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-4 background-fond">
                 <form id="form-connexion">
-                    <div class="form-group">
+                    <div class="form-group" method="POST" action="http://127.0.0.1/laravel5/public/verif">
                         <!-- si l'identidiant est invalide, ajouter la classe "is-invalid" dans l'input suivant : -->
                         <label for="inputIdentifiant">Identifiant</label>
                         <input type="text" class="form-control" id="inputIdentifiant" aria-describedby="emailHelp"
@@ -80,7 +80,7 @@
 
                 <p id="paragrapheInscription">Vous n'êtes pas encore inscrit ou inscrite ?</p>
 
-                <form action="inscription.html">
+                <form action="inscription.html" method="POST" action="">
                     <div class="btn-group btn-custom" role="group" aria-label="Basic example">
                         <button type="submit" class="btn btn-noir btn-lg btn-custom">S'inscrire</button>
                     </div>

@@ -11,7 +11,11 @@
 |
 */
 
+Route::get('/boncoloc/inscription', 'inscriptionController@getPage');
+
 Route::get('/boncoloc', 'pageConnexion@getPage');
+
+Route::post('/boncoloc', 'pageConnexion@aldo');
 
 Route::post('/verif', 'connexionController@postConnexion');
 
