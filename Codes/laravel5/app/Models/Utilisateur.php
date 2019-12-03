@@ -20,9 +20,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $Tel
  * @property string $Mail
  * @property string $DateNaissance
+ * @property string $TypeProfil
+ * @property bool $Sport
+ * @property bool $Musique
+ * @property bool $Lecture
+ * @property bool $Arts
+ * @property bool $Fete
+ * @property bool $JeuxVideo
  * 
  * @property Collection|Location[] $locations
- * @property Collection|Préférence[] $préférences
  *
  * @package App\Models
  */
@@ -32,6 +38,15 @@ class Utilisateur extends Model
 	protected $primaryKey = 'IdUtilisateur';
 	public $timestamps = false;
 
+	protected $casts = [
+		'Sport' => 'bool',
+		'Musique' => 'bool',
+		'Lecture' => 'bool',
+		'Arts' => 'bool',
+		'Fete' => 'bool',
+		'JeuxVideo' => 'bool'
+	];
+
 	protected $fillable = [
 		'Login',
 		'Mdp',
@@ -39,16 +54,18 @@ class Utilisateur extends Model
 		'Nom',
 		'Tel',
 		'Mail',
-		'DateNaissance'
+		'DateNaissance',
+		'TypeProfil',
+		'Sport',
+		'Musique',
+		'Lecture',
+		'Arts',
+		'Fete',
+		'JeuxVideo'
 	];
 
 	public function locations()
 	{
 		return $this->hasMany(Location::class, 'IdUtilisateur');
-	}
-
-	public function préférences()
-	{
-		return $this->hasMany(Préférence::class, 'IdUtilisateur');
 	}
 }
