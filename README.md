@@ -46,6 +46,7 @@ Il se peut que la commande prenne du temps. Une fois terminé, testez le fonctio
 Copiez le dossier `laravel5` du dépôt GitHub et remplacez-le par celui que vous avez créé.
 
 ###Le site
+
 Maintenant vous pouvez librement accéder au site en cliquant sur ce [lien](127.0.0.1/laravel5/public/boncoloc) ou en vous rendant à l'adresse _127.0.0.1/laravel5/public/boncoloc_
 1. Un compte par défaut est créé (compte d'une personne qui cherche une coloc)
 ```
@@ -56,4 +57,5 @@ mot de passe = 2019
 3. Visitez notre site ! :)
 
 **Si besoin vous pouvez utiliser ce [site](https://openclassrooms.com/fr/courses/1811341-decouvrez-le-framework-php-laravel-ancienne-version/1820116-installation-et-organisation) pour l'installtion de composer et laravel**
+
 **N'hésitez pas à nous contacter par mail _jbouteille@enseirb-matmeca.fr_**
