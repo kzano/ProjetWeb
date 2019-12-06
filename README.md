@@ -47,7 +47,11 @@ Il se peut que la commande prenne du temps. Une fois terminé, testez le fonctio
 
 Copiez le dossier `laravel5` du dépôt GitHub et remplacez-le par celui que vous avez créé.
 
+<<<<<<< HEAD
 ### Le site
+=======
+###Le site
+>>>>>>> master
 
 Maintenant vous pouvez librement accéder au site en cliquant sur ce [lien](127.0.0.1/laravel5/public/boncoloc) ou en vous rendant à l'adresse _127.0.0.1/laravel5/public/boncoloc_
 1. Un compte par défaut est créé (compte d'une personne qui cherche une coloc)
