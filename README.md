@@ -4,8 +4,9 @@
 Installez [WampServeur](http://www.wampserver.com/) sur votre ordinateur.
 
    1. Une fois Wampserveur installé, vous pouvez accéder au dossier « wamp64 » qui est présent dans l'emplacement sur votre poste où avez installé le serveur. Dans ce dernier il y aura un dossier « www ». C'est dans celui-ci que seront stockées les pages. Exemple : une page web index.html y est présente dans le dossier « www ». Pour y accéder : [http://127.0.0.1/index.html](http://127.0.0.1/index.html)
-   2. Lorsque le serveur fonctionne, accédez à [phpmyadmin](http://127.0.0.1/phpmyadmin/index.php). Nom ustilisateur par défaut : `root` (sans mot de passe). > **Choisir MySQL avant de se connecter (et non MariaDB).**
-   3. Créez un utilisateur `MyColoc` avec en mot de passe `bddcoloc2019`. Créez une base pour cet utilisateur nommée `mycoloc`. Une fois fait, connectez-vous sur le compte précédemment créé.
+   2. Lorsque le serveur fonctionne, accédez à [phpmyadmin](http://127.0.0.1/phpmyadmin/index.php). Nom ustilisateur par défaut : `root` (sans mot de passe). 
+   >**Choisir MySQL avant de se connecter (et non MariaDB).**
+   1. Créez un utilisateur `MyColoc` avec en mot de passe `bddcoloc2019`. Créez une base pour cet utilisateur nommée `mycoloc`. Une fois fait, connectez-vous sur le compte précédemment créé.
 
 ### Composer
 Installez [Composer](https://getcomposer.org/download/).
