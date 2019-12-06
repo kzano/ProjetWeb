@@ -4,7 +4,7 @@
 Installez [WampServeur](http://www.wampserver.com/) sur votre ordinateur.
 
    1. Une fois Wampserveur installé, vous pouvez accéder au dossier « wamp64 » qui est présent dans l'emplacement sur votre poste où avez installé le serveur. Dans ce dernier il y aura un dossier « www ». C'est dans celui-ci que seront stockées les pages. Exemple : une page web index.html y est présente dans le dossier « www ». Pour y accéder : [http://127.0.0.1/index.html](http://127.0.0.1/index.html)
-   2. Lorsque le serveur fonctionne, accédez à [phpmyadmin](http://127.0.0.1/phpmyadmin/index.php). Nom ustilisateur par défaut : `root` (sans mot de passe). **Choisir MySQL avant de se connecter (et non MariaDB).**
+   2. Lorsque le serveur fonctionne, accédez à [phpmyadmin](http://127.0.0.1/phpmyadmin/index.php). Nom ustilisateur par défaut : `root` (sans mot de passe). >**Choisir MySQL avant de se connecter (et non MariaDB).**
    3. Créez un utilisateur `MyColoc` avec en mot de passe `bddcoloc2019`. Créez une base pour cet utilisateur nommée `mycoloc`. Une fois fait, connectez-vous sur le compte précédemment créé.
 
 ### Composer
@@ -47,11 +47,8 @@ Il se peut que la commande prenne du temps. Une fois terminé, testez le fonctio
 
 Copiez le dossier `laravel5` du dépôt GitHub et remplacez-le par celui que vous avez créé.
 
-<<<<<<< HEAD
 ### Le site
-=======
-###Le site
->>>>>>> master
+
 
 Maintenant vous pouvez librement accéder au site en cliquant sur ce [lien](127.0.0.1/laravel5/public/boncoloc) ou en vous rendant à l'adresse _127.0.0.1/laravel5/public/boncoloc_
 1. Un compte par défaut est créé (compte d'une personne qui cherche une coloc)
