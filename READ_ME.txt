@@ -13,7 +13,7 @@ dans le dossier www. Pour y accéder : http://127.0.0.1/index.html
 		
 		- Nom d'hôte : localhost
 
-		- Cochez la case "Créer une base portant son et donner ..."
+		- Cochez la case "Créer une base portant son nom et donner ..."
 
 		- Privilèges globaux : "Tout cocher"
 

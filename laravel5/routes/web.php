@@ -11,6 +11,8 @@
 |
 */
 
+Route::post('/boncoloc/annonce', 'annonceController@getPage');
+
 Route::get('/boncoloc/inscription', 'inscriptionController@getPage');
 
 Route::post('/boncoloc/inscription', 'inscriptionController@ajout');

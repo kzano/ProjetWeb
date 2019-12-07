@@ -52,19 +52,19 @@
                     <div class="form-group">
                         <!-- si l'identidiant est invalide, ajouter la classe "is-invalid" dans l'input suivant : -->
                         <label for="inputIdentifiant">Identifiant</label>
-                        <input name="login" type="text" class="form-control {{$class}}" id="inputIdentifiant" aria-describedby="emailHelp"
+                        <input value="{{old('login')}}" name="login" type="text" class="form-control @if($errors->has('login')) {{'is-invalid'}} @endif" id="inputIdentifiant" aria-describedby="emailHelp"
                             placeholder="Entrer votre identifiant">
-                        <div class="invalid-feedback" id="div-verification-mdp">L'identifiant que vous avez saisi est incorrect.</div>
+                        <div class="invalid-feedback" id="div-verification-mdp">{{$errors->first('login')}}</div>
                     </div>
 
                     <div class="form-group">
                         <label for="inputPassword">Mot de passe</label>
                         <!-- si le mot de passe est invalide, ajouter la classe "is-invalid" dans l'input suivant : -->
-                        <input name="mdp" type="password" class="form-control {{$class}}" id="inputPassword"
+                        <input name="mdp" type="password" class="form-control @if($errors->has('mdp')) {{'is-invalid'}} @endif" id="inputPassword"
                             placeholder="Entrer votre mot de passe">
                         <small id="emailHelp" class="form-text text-muted">Entrer votre mot de passe à l'abri des
                             regards indiscrets.</small>
-                        <div class="invalid-feedback" id="div-verification-mdp">Le mot de passe que vous avez saisi est incorrect.</div>
+                        <div class="invalid-feedback" id="div-verification-mdp">{{$errors->first('mdp')}}</div>
                     </div>
 
                     <div class="btn-group btn-custom" role="group" aria-label="Basic example">

@@ -16,31 +16,31 @@
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- LIBRAIRIE D'ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="../Codes/js/connexion.js"></script>
+    <!--<script src="../Codes/js/connexion.js"></script>-->
 </head>
 
 <body>
     <!-- En-tete -->
     <header>
         <nav class="navbar navbar-dark bg-dark mb-5">
-            <a class="navbar-brand nav-link-white link align-bottom" href="#">
+            <a class="navbar-brand nav-link-white link align-bottom" href="http://127.0.0.1/laravel5/public/boncoloc">
                 <img class="logo mr-3" src="{{asset('images/logo-blanc.png')}}" alt="BonColoc">BonColoc
             </a>
             <ul>
-                <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="http://127.0.0.1/laravel5/public/boncoloc">Page de connexion</a></li>
+                <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="http://127.0.0.1/laravel5/public/boncoloc">Se connecter</a></li>
             </ul>
         </nav>
     </header>
@@ -62,7 +62,7 @@
                             <!-- nom -->
                             <div class="form-group">
                                 <label for="inputNom">Nom</label>
-                                <input name="lastname" type="text" class="form-control" id="inputNom" placeholder="Nom" required>
+                                <input value="{{old('name')}}" name="name" type="text" class="form-control" id="inputNom" placeholder="Nom" required>
                             </div>
                         </div>
 
@@ -70,7 +70,7 @@
                             <!-- prenom -->
                             <div class="form-group">
                                 <label for="inputPrenom">Prénom</label>
-                                <input name="name" type="text" class="form-control" id="inputPrenom" placeholder="Prénom" required>
+                                <input value="{{old('lastname')}}" name="lastname" type="text" class="form-control" id="inputPrenom" placeholder="Prénom" required>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="inputDateNaissance">Date de naissance</label>
-                                <input name="date" type="date" class="form-control" id="start" name="trip-start" value="2018-07-22"
+                                <input value="{{old('date')}}" name="date" type="date" class="form-control" id="start" name="trip-start" value="2018-07-22"
                                     min="1908-01-01" required>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="inputTelephone">Numéro de téléphone</label>
-                                <input name="phone" type="number" class="form-control" id="inputTelephone"
+                                <input value="{{old('phone')}}" name="phone" type="number" class="form-control" id="inputTelephone"
                                     placeholder="Numéro de téléphone" maxlength="10" pattern="[0-9]{10}" required>
                             </div>
                         </div>
@@ -157,29 +157,55 @@
 
                     <div class="form-group mb-2">
                         <label for="inputIdentifiant">Identifiant</label>
-                        <input name="login" type="text" class="form-control" id="inputIdentifiant" aria-describedby="emailHelp"
+                        <input value="{{old('login')}}" name="login" type="text" class="form-control @if($errors->has('login')) {{'is-invalid'}}@endif" id="inputIdentifiant" aria-describedby="emailHelp"
                             placeholder="Identifiant" required>
+                            <div class="invalid-feedback" id="div-verification-mdp">{{$errors->first('login')}}</div>
                     </div>
 
                     <!-- adresse de courrier electronique -->
                     <div class="form-group mb-2">
                         <label for="inputCourriel">Adresse de courrier électronique</label>
-                        <input name="mail" type="email" class="form-control" id="inputCourriel" placeholder="nom@mail.com" required>
+                        <input value="{{old('mail')}}" name="mail" type="email" class="form-control @if($errors->has('mail')) {{'is-invalid'}}@endif" id="inputCourriel" placeholder="nom@mail.com" required>
+                        <div class="invalid-feedback" id="div-verification-mdp">{{$errors->first('mail')}}</div>
                     </div>
 
                     <!-- mot de passe -->
                     <div class="form-group">
                         <label for="inputPassword">Mot de passe</label>
-                        <input name="mdp" type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
+                        <input name="mdp" type="password" class="form-control @if($errors->has('mdp')) {{'is-invalid'}}@endif" id="inputPassword" placeholder="Mot de passe"
+                            required>
+                            <div class="invalid-feedback" id="div-verification-mdp">{{$errors->first('mdp')}}</div>
                     </div>
 
+                    <!-- confirmation mdp -->
                     <div class="form-group">
-                        <label>Votre profil</label>
-                        <SELECT name="profil">
-                        <option value="publication">Je publie une colocation
-                        <option value="cherche">Je recherche une coloc
-                        </SELECT>
+                        <label for="inputPassword">Confirmation mot de passe</label>
+                        <input name="mdp_confirmation" type="password" class="form-control @if($errors->has('mdp_confirmation')) {{'is-invalid'}}@endif" id="inputPassword" placeholder="Mot de passe"
+                            required>
+                            <div class="invalid-feedback" id="div-verification-mdp">{{$errors->first('mdp_confirmation')}}</div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="select-profil">Profil</label>
+                                <select name="profil" class="form-control" id="exampleFormControlSelect1">
+                                    <option></option>
+                                    <option value="annonceur">Annonceur</option>
+                                    <option value="chercheur">Chercheur</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="form-group">
+                        <label for="inputPassword">Confirmer votre mot de passe</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
+                    </div>
+                    -->
+
+
 
                     <!-- s'inscrire -->
                     <div class="btn-group btn-custom" role="group" aria-label="Basic example">

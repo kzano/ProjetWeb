@@ -43,7 +43,8 @@
     <div class="container-fluid">
         <!-- my-x = margin entre les divs en prenant le top et bottom (cf : https://getbootstrap.com/docs/4.0/utilities/spacing/) -->
         <div class="container background-fond">
-            <form>
+            <form method="POST" action="http://127.0.0.1/laravel5/public/boncoloc/annonce">
+                @csrf
                 <!-- PREMIÈRE LIGNE -->
                 <div class="row">
 
