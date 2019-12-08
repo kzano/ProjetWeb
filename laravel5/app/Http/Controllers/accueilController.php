@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class accueilController extends Controller
 {
-    public function getPage(Request $requete){
+    public function getPage(){
          return view('accueil', ['login' => auth()->user()->Login]);
     }
 

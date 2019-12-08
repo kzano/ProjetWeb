@@ -11,7 +11,11 @@
 |
 */
 
+Route::get('/boncoloc/ajoutAnnonce', 'ajoutPublicationController@getPage')->middleware('App\Http\Middleware\auth');
+
 Route::post('/boncoloc/annonce', 'annonceController@getPage');
+
+Route::post('/boncoloc/ajoutAnnonce', 'ajoutPublicationController@postAjoutAnnonce');
 
 Route::get('/boncoloc/inscription', 'inscriptionController@getPage');
 

@@ -7,9 +7,10 @@ use App\Models\Utilisateur as User;
 
 class connexionController extends Controller
 {
-    public function postConnexion(Request $requete)
+    public function postConnexion()
     {
-            $requete->session()->put('log', '');
-            return redirect("/boncoloc/accueil");
+            $profil = User::select('TypeProfil')->where('Login', auth()->user()->Login)->get();
+            if($profil[0]->TypeProfil == "chercheur") return redirect("/boncoloc/accueil");
+            else return redirect("/boncoloc/ajoutAnnonce");
     }
 }

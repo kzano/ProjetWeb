@@ -30,11 +30,13 @@
     <!-- En-tete -->
     <header>
         <nav class="navbar navbar-dark bg-dark mb-5">
-            <a class="navbar-brand nav-link-white link align-bottom" href="index.html">
-                <img class="logo mr-3" src="images/logo-blanc.png" alt="BonColoc">BonColoc
+            <a class="navbar-brand nav-link-white link align-bottom" href="http://127.0.0.1/laravel5/public/boncoloc">
+                <img class="logo mr-3" src="{{asset('images/logo-blanc.png')}}" alt="BonColoc">BonColoc
             </a>
             <ul>
+                <li class="nav-item mx-1"><a class="nav-link nav-link-white">{{$login}}</a></li>
                 <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="http://127.0.0.1/laravel5/public/boncoloc/disconnect">Se déconnecter</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -45,7 +47,7 @@
         <div class="container card background-fond my-3">
             <h4>Votre annonce</h4>
             <hr width="100%" color="black">
-            <form>
+            <form method="POST" action="" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body background-black">
 
@@ -58,7 +60,7 @@
                             <!-- Titre annonce -->
                             <div class="form-group mb-4">
                                 <label>Titre de l'annonce</label>
-                                <input type="text" class="form-control" id="titreAnnonce" data-toggle="tooltip"
+                                <input name="titre" type="text" class="form-control" value="{{old('titre')}}" id="titreAnnonce" data-toggle="tooltip"
                                     data-placement="top" title="Titre de l'annonce" placeholder="Titre de votre annonce"
                                     required>
                             </div>
@@ -66,8 +68,8 @@
                             <!-- Desription de l'annonce -->
                             <div class="form-group mb-4">
                                 <label>Texte de l'annonce</label>
-                                <textarea class="form-control" id="textAnnonce" rows="7" data-toggle="tooltip"
-                                    data-placement="top" title="Description de l'annonce"
+                                <textarea name="description" class="form-control" id="textAnnonce" rows="7" data-toggle="tooltip"
+                                    data-placement="top" title="Description de l'annonce" value="{{old('description')}}"
                                     placeholder="Description de la colocation et du colocataire recherché"
                                     required></textarea>
                             </div>
@@ -79,7 +81,7 @@
                             <!-- Type de bien -->
                             <div class="form-group mb-3">
                                 <label>Type de bien</label>
-                                <select class="form-control custom-select" id="filtreType" data-toggle="tooltip"
+                                <select name="type" class="form-control custom-select" id="filtreType" data-toggle="tooltip"
                                     data-placement="top" title="Type de bien" required>
                                     <option selected disabled>Type</option>
                                     <option value=0>Maison</option>
@@ -90,7 +92,7 @@
                             <!-- Nombre de pièces -->
                             <div class="form-group mb-3">
                                 <label>Pièces</label>
-                                <select class="form-control custom-select" id="filtrePieces" data-toggle="tooltip"
+                                <select name="pieces" class="form-control custom-select" id="filtrePieces" data-toggle="tooltip"
                                     data-placement="top" title="Nombre de pièces" required>
                                     <option selected disabled>Nombre de pièces</option>
                                     <option value=1>1</option>
@@ -104,7 +106,7 @@
                             <!-- Ameublement -->
                             <div class="form-group mb-3">
                                 <label>Ameublement</label>
-                                <select class="form-control custom-select" id="filtreMeubles" data-toggle="tooltip"
+                                <select name="ameublement" class="form-control custom-select" id="filtreMeubles" data-toggle="tooltip"
                                     data-placement="top" title="Ameublement" required>
                                     <option selected disabled>Meublé ou non</option>
                                     <option value=0>Meublé</option>
@@ -115,7 +117,7 @@
                             <!-- Nombre de colocataires -->
                             <div class="form-group mb-3">
                                 <label>Colocataires</label>
-                                <select class="custom-select" id="filtreColoc" data-toggle="tooltip"
+                                <select name="nbcoloc" class="custom-select" id="filtreColoc" data-toggle="tooltip"
                                     data-placement="top" title="Nombre de colocataire" required>
                                     <option selected disabled>Nombre de colocataires</option>
                                     <option value=1>1</option>
@@ -133,14 +135,14 @@
                         <!-- Ville -->
                         <div class="col-md-4">
                             <label>Localisation</label>
-                            <input type="text" class="form-control" id="localisation" data-toggle="tooltip"
+                            <input value="{{old('ville')}}" name="ville" type="text" class="form-control" id="localisation" data-toggle="tooltip"
                                 data-placement="top" title="Localisation de la colocation" placeholder="Ville" required>
                         </div>
 
                         <!-- Code postal -->
                         <div class="col-md-2">
                             <label>Code postal</label>
-                            <input type="number" class="form-control" maxlength="5" pattern="[0-9]{5}" size="5"
+                            <input name="cp" value="{{old('cp')}}" type="number" class="form-control" maxlength="5" pattern="[0-9]{5}" size="5"
                                 id="codePostal" data-toggle="tooltip" data-placement="top" title="Code postal"
                                 placeholder="ex : 33400" required>
                         </div>
@@ -149,8 +151,8 @@
                         <div class="col-md-3">
                             <label>Superficie</label>
                             <div class="input-group">
-                                <input type="number" class="form-control" placeholder="Surface min" maxlength="5"
-                                    pattern="[0-9]{3}" size="5" data-toggle="tooltip" data-placement="top"
+                                <input name="surface" type="number" class="form-control" placeholder="Surface min" maxlength="5"
+                                    pattern="[0-9]{3}" size="5" data-toggle="tooltip" data-placement="top" value="{{old('surface')}}"
                                     title="Surface min. (m²)" required>
                                 <div class="input-group-append">
                                     <span class="input-group-text">m²</span>
@@ -162,8 +164,8 @@
                         <div class="col-md-3">
                             <label>Prix</label>
                             <div class="input-group">
-                                <input type="number" class="form-control" placeholder="Loyer" maxlength="5"
-                                    pattern="[0-9]{3,}" size="5" data-toggle="tooltip" data-placement="top"
+                                <input name="prix" type="number" class="form-control" placeholder="Loyer" maxlength="5"
+                                    pattern="[0-9]{3,}" size="5" data-toggle="tooltip" data-placement="top" value="{{old('prix')}}"
                                     title="Prix de loyer en €" required>
                                 <div class="input-group-append">
                                     <span class="input-group-text">€</span>
@@ -180,7 +182,7 @@
                                 <i class="fa fa-3x fa-camera"></i>
                             </label>
                             <input id="file-upload1" type="file" name="photo1" accept=".png, .jpeg"
-                                onchange="showName1()" />
+                                onchange="showName1()"/>
                         </div>
 
                         <!-- Photo 2 -->
@@ -196,7 +198,7 @@
                             <label for="file-upload3" class="custom-file-upload p-4 rounded" title="Photo numéro 3">
                                 <i class="fa fa-3x fa-camera"></i>
                             </label>
-                            <input id="file-upload3" type="file" name="photo3" accept=".png, .jpeg" />
+                            <input id="file-upload3" type="file" name="photo3" accept=".png, .jpeg"/>
                         </div>
                     </div>
 
@@ -217,7 +219,7 @@
                             <span class="badge badge-dark" id="fichier3"></span>
                         </div>
                     </div>
-
+                    
                     <!-- Bouton envoyer formulaire -->
                     <div class="form-row">
                         <div class="text-center w-100">

@@ -46,7 +46,7 @@ class Logement extends Model
 
 	protected $fillable = [
 		'Type',
-		'Superfice',
+		'Superficie',
 		'NbPieces',
 		'Ville',
 		'CP',

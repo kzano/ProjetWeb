@@ -62,7 +62,7 @@
                             <!-- nom -->
                             <div class="form-group">
                                 <label for="inputNom">Nom</label>
-                                <input value="{{old('name')}}" name="name" type="text" class="form-control" id="inputNom" placeholder="Nom" required>
+                                <input value="{{old('lastname')}}" name="lastname" type="text" class="form-control" id="inputNom" placeholder="Nom" required>
                             </div>
                         </div>
 
@@ -70,7 +70,7 @@
                             <!-- prenom -->
                             <div class="form-group">
                                 <label for="inputPrenom">Prénom</label>
-                                <input value="{{old('lastname')}}" name="lastname" type="text" class="form-control" id="inputPrenom" placeholder="Prénom" required>
+                                <input value="{{old('name')}}" name="name" type="text" class="form-control" id="inputPrenom" placeholder="Prénom" required>
                             </div>
                         </div>
                     </div>
