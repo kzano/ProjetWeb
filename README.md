@@ -20,9 +20,9 @@ Lors de l'installation il vous sera demandé de localiser « php.exe ». Il se s
 
 2. Ensuite, veuillez ouvrir un invite de commande (cmd) et placez vous dans le dossier `wamp64/www/laravel5` de votre serveur. Ensuite, lancez la commande suivante.
 
-```bash
-composer install
-```
+    ```bash
+    composer install
+    ```
 3. Une fois fini, tapez ceci :
 
     ```bash
@@ -44,11 +44,11 @@ Maintenant vous pouvez librement accéder au site en cliquant sur ce [lien](127.
 1. Un compte par défaut est créé (compte d'une personne qui cherche une coloc)
 ```
 login = BonColoc
-mot de passe = 2019
+Password = 2019
 ```
 2. Vous devez créer votre propre compte afin d'accéder au site.
 3. Bonne visite sur notre site ! :)
 
-**Si besoin vous pouvez utiliser ce [site](https://openclassrooms.com/fr/courses/1811341-decouvrez-le-framework-php-laravel-ancienne-version/1820116-installation-et-organisation) pour l'installtion de composer et laravel**
+**Si besoin vous pouvez utiliser ce [site](https://openclassrooms.com/fr/courses/1811341-decouvrez-le-framework-php-laravel-ancienne-version/1820116-installation-et-organisation) pour l'installtion de composer et laravel.**
 
 **N'hésitez pas à nous contacter par mail _jbouteille@enseirb-matmeca.fr_**
