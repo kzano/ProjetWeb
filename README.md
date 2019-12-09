@@ -2,7 +2,7 @@
 ## Installation
 ### WampServer
 Installez [WampServer](http://www.wampserver.com/) sur votre ordinateur.
-**Si boux rencontrez des erreurs de dll lors de l'installation, vous devez installer ces derniers puis réinstaller Wampserver. Répetez l'opération jusqu'a l'installation totale sans erreurs de dll.**
+**Si vous rencontrez des erreurs de dll lors de l'installation, vous devez installer ces derniers puis réinstaller Wampserver. Répetez l'opération jusqu'a l'installation totale sans erreurs de dll.**
 
    1. Une fois Wampserver installé, vous pouvez accéder au dossier « wamp64 » qui est présent dans l'emplacement sur votre poste où avez installé le serveur. Dans ce dernier il y aura un dossier « www ». C'est dans celui-ci que seront stockées les pages. Exemple : une page web index.html y est présente dans le dossier « www ». Pour y accéder : [http://127.0.0.1/index.html](http://127.0.0.1/index.html)
    2. Lorsque le serveur fonctionne, accédez à [phpmyadmin](http://127.0.0.1/phpmyadmin/index.php). Nom ustilisateur par défaut : `root` (sans mot de passe).
