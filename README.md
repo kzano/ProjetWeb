@@ -37,6 +37,8 @@ Lors de l'installation il vous sera demandé de localiser « php.exe ». Il se s
     DB_PASSWORD = bddcoloc2019
     ```
 
+7. Enregistrez puis fermez ce dernier.
+
 ### Le site
 
 
