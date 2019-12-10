@@ -124,6 +124,15 @@ select option:focus {
     color: rgba(0, 153, 0, 0.8);
 }
 
+a{
+    color: black;
+}
+
+a:hover{
+    color: rgba(0, 153, 0, 0.8);
+    text-decoration: none;
+}
+
 /* style du lien du logo dans la barre de navigation */
 
 .link {
@@ -273,4 +282,8 @@ input[type="file"] {
 
 .card-header {
     color: rgba(0, 153, 0, 0.8);
+}
+
+.custom-control-label{
+    white-space: nowrap;
 }
