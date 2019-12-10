@@ -11,9 +11,11 @@
 |
 */
 
+Route::get('/boncoloc/annonce/{id}', 'annonce@getPage')->middleware('App\Http\Middleware\auth');
+
 Route::get('/boncoloc/ajoutAnnonce', 'ajoutPublicationController@getPage')->middleware('App\Http\Middleware\auth');
 
-Route::post('/boncoloc/annonce', 'annonceController@getPage');
+Route::post('/boncoloc/annonce', 'listeAnnonce@getPage');
 
 Route::post('/boncoloc/ajoutAnnonce', 'ajoutPublicationController@postAjoutAnnonce');
 
@@ -28,8 +30,6 @@ Route::post('/boncoloc', 'pageConnexion@aldo');
 Route::post('/verif', 'connexionController@postConnexion')->middleware('App\Http\Middleware\verifConnexion');
 
 Route::get('/boncoloc/accueil', 'accueilController@getPage')->middleware('App\Http\Middleware\auth');
-
-Route::get('/boncoloc/notconnect', 'pageConnexion@getPagePbConnexion');
 
 Route::get('/boncoloc/disconnect', 'decoController@controleDisconnect');
 

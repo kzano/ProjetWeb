@@ -183,6 +183,9 @@
                             </label>
                             <input id="file-upload1" type="file" name="photo1" accept=".png, .jpeg"
                                 onchange="showName1()"/>
+                            @if($errors->has('photo1'))
+                            <label>{{$errors->first('photo1')}}</label>
+                            @endif
                         </div>
 
                         <!-- Photo 2 -->

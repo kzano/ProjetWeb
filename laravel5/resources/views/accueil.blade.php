@@ -51,11 +51,11 @@
                     <!-- FILTRE TYPE DE BIEN -->
                     <div class="col">
                         <div class="form-group">
-                            <select class="form-control custom-select" id="filtreType" data-toggle="tooltip"
+                            <select name="type" class="form-control custom-select" id="filtreType" data-toggle="tooltip"
                                 data-placement="top" title="Type de bien">
-                                <option selected disabled>Type de bien</option>
-                                <option value=0>Maison</option>
-                                <option value=1>Appartement</option>
+                                <option selected disabled value="">Type de bien</option>
+                                <option value="Maison">Maison</option>
+                                <option value="Appartement">Appartement</option>
                             </select>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     <!-- FILTRE NOMBRE DE PIECES -->
                     <div class="col">
                         <div class="form-group">
-                            <select class="form-control custom-select" id="filtrePieces" data-toggle="tooltip"
+                            <select name="nbpieces" class="form-control custom-select" id="filtrePieces" data-toggle="tooltip"
                                 data-placement="top" title="Nombre de pièces">
                                 <option selected disabled>Nombre de pièces</option>
                                 <option value=1>1</option>
@@ -78,11 +78,11 @@
                     <!-- FILTRE AMEUBLEMENT -->
                     <div class="col">
                         <div class="form-group">
-                            <select class="form-control custom-select" id="filtreMeubles" data-toggle="tooltip"
+                            <select name="ameublement" class="form-control custom-select" id="filtreMeubles" data-toggle="tooltip"
                                 data-placement="top" title="Ameublement">
                                 <option selected disabled>Ameublement</option>
-                                <option value=0>Meublé</option>
-                                <option value=1>Non-meublé</option>
+                                <option value="Meublé">Meublé</option>
+                                <option value="Non-meublé">Non-meublé</option>
                             </select>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                     <!-- FILTRE NOMBRE DE COLOCATAIRES -->
                     <div class="col-md-3">
                         <div class="form-group mb-0">
-                            <select class="custom-select" id="filtreColoc" data-toggle="tooltip" data-placement="top"
+                            <select name="nbcoloc" class="custom-select" id="filtreColoc" data-toggle="tooltip" data-placement="top"
                                 title="Nombre de colocataire">
                                 <option selected disabled>Colocataires</option>
                                 <option value=1>1</option>
@@ -108,7 +108,7 @@
                     <!-- FILTRE LOCALISATION -->
                     <div class="col-md-3">
                         <div class="form-group mb-0">
-                            <input type="number" class="form-control" placeholder="Code postal" maxlength="5"
+                            <input name="ville" type="number" class="form-control" placeholder="Code postal" maxlength="5"
                                 pattern="[0-9]{5}" size="5" data-toggle="tooltip" data-placement="top"
                                 title="Code postal">
                         </div>
@@ -117,7 +117,7 @@
                     <!-- FILTRE SURFACE -->
                     <div class="col">
                         <div class="form-group mb-0">
-                            <input type="number" class="form-control" placeholder="Surface min. (m²)" maxlength="5"
+                            <input name="superficie" type="number" class="form-control" placeholder="Surface min. (m²)" maxlength="5"
                                 pattern="[0-9]{3}" size="5" data-toggle="tooltip" data-placement="top"
                                 title="Surface min.">
                         </div>
@@ -128,7 +128,7 @@
                     <div class="col-md-4">
                         <div class="form-group text-center h-100 mb-0">
                             <div class="slidecontainer h-100 mx-auto">
-                                <input type="range" class="custom-range" id="rangePrix" min="0" max="2000" value="1000"
+                                <input name="prix" type="range" class="custom-range" id="rangePrix" min="0" max="2000" value="1000"
                                     step="50">
                             </div>
                         </div>

@@ -32,7 +32,7 @@
     <!-- En-tete -->
     <header>
         <nav class="navbar navbar-dark bg-dark mb-5">
-            <a class="navbar-brand nav-link-white link align-bottom" href="index.html">
+            <a class="navbar-brand nav-link-white link align-bottom" href="http://127.0.0.1/laravel5/public/boncoloc/disconnect">
                 <img class="logo mr-3" src="{{asset('images/logo-blanc.png')}}" alt="BonColoc">BonColoc
             </a>
             <ul>
@@ -44,19 +44,19 @@
 
     
     <div class="container align-middle">
-    @foreach($result as $user)
+        @foreach($result as $annonce)
         <div class="row mb-2 align-items-center col-annonce shadow bg-white rounded">
             <div class="col-3">
-                <img class="rounded img-annonce img-fluid" src="{{asset('images/bordeaux/manor-house-2359884_640.jpg')}}">
+                <img class="rounded img-annonce img-fluid" src="http://127.0.0.1/laravel5/public/publications/{{$annonce->Image_1}}">
             </div>
 
             <!-- pre-visualisation d'une annonce -->
             
             <div class="col-9">
-                <h3>{{ $user->Prénom }}</h3>
-                <span class="span-prix">{{$user->Tel}}</span>
-                <p>{{$user->Sport}}</p>
-                <a class="btn btn-noir" href="annonce.html">Voir l'annonce</a>
+                <h3>{{ $annonce->Titre }}</h3>
+                <span class="span-prix">{{$annonce->Prix}} euros</span>
+                <p><?php $descrp = substr($annonce->Description,0,150)?> {{$descrp}}...</p>
+                <a class="btn btn-noir" href="http://127.0.0.1/laravel5/public/boncoloc/annonce/{{$annonce->IdLogement}}">Voir l'annonce</a>
             </div>
             
         </div>

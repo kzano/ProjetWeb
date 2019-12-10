@@ -61,6 +61,6 @@ class Logement extends Model
 
 	public function locations()
 	{
-		return $this->hasMany(Location::class, 'IdLogement');
+		return $this->hasOne(Location::class, 'IdLogement');
 	}
 }

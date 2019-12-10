@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class decoController extends Controller
 {
+    //Deconnecter l'utilisateur courant
     public function controleDisconnect(Request $requete)
     {
         auth()->logout();
