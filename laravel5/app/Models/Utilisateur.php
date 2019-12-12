@@ -80,6 +80,6 @@ class Utilisateur extends Model implements Authenticatable
 	
 	public function locations()
 	{
-		return $this->hasMany(Location::class, 'IdUtilisateur');
+		return $this->hasOne(Location::class, 'IdUtilisateur');
 	}
 }

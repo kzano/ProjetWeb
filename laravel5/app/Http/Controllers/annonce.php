@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Utilisateur;
 use App\Models\Logement;
 use App\Models\Location;
 
-class publicationsLogementController extends Controller
+class annonce extends Controller
 {
     public function getPage($id){
+
+        $login = auth()->user()->Login;
 
         $annonce = Logement::find($id);
 

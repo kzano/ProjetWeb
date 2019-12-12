@@ -74,7 +74,8 @@ class ajoutPublicationController extends Controller
         //Sauvegarder les ID 
         $location->save();
 
-
-        return "TOUT EST OK !! "     
+        sleep(3);
+        
+        return redirect("/boncoloc/monAnnonce");    
     }
 }

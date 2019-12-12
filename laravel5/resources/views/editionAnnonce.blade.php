@@ -38,21 +38,17 @@
                 <img class="logo mr-3" src="{{asset('images/logo-blanc.png')}}" alt="BonColoc">BonColoc
             </a>
             <ul>
-                <li class="nav-item mx-1"><a class="nav-link nav-link-white"></a></li>
                 <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="http://127.0.0.1/laravel5/public/boncoloc/disconnect">Se déconnecter</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container-fluid align-middle">
-        <div class="row">
-            <div class="col-2">
-            <button type="submit" class="btn btn-noir" onclick="window.history.back()"><span
-                            class="fa fa-caret-left"></span>
-                        Précédent
-                    </button>
-            </div>
+        <div class="row m-5 align-items-center">
+            <h1 style="width: 100%; text-align: center;" class="mx-auto">Aperçu de votre annonce</h1>
+        </div>
 
+        <div class="row justify-content-end">
             <div class="col-8">
                 <div id="carouselAnnonce" class="carousel slide carousel-lenght mx-auto" style="width: 100%;"
                     data-ride="carousel">
@@ -94,10 +90,8 @@
                     <!-- titre de l'annonce -->
                     <div>
                         <div class="mb-2">
-                            <h1>{{$annonce->Titre}}</h1>
-                            <span class="span-prix">{{$annonce->Prix}}
-                                <span> €</span>
-                            </span>
+                            <h1>Titre</h1>
+                            <p><span class="span-prix">{{$annonce->Prix}} €</span></p>
                         </div>
                     </div>
 
@@ -125,7 +119,7 @@
 
                             <!-- deuxieme colonne-->
                             <div class="col-4">
-                                <p>Nombre de pièces : {{$annonce->NbPieces}} <span id="nbPieces"></span></p>
+                                <p>Nombre de pièces : {{$annonce->NbPiece}}<span id="nbPieces"></span></p>
                             </div>
 
                             <!-- troisieme colonne-->
@@ -156,7 +150,7 @@
 
                             <!-- deuxieme colonne-->
                             <div class="col-4">
-                                <p>Ville : {{$annonce->Ville}}<span id="Ville"></span></p>
+                                <p>Ville : {{$annonce->Ville}}<span id="nbPieces"></span></p>
                             </div>
                         </div>
                     </div>
@@ -180,6 +174,29 @@
 
                         <p>Courriel : {{$user->Mail}}<span id="courrielAnnonceur"></span></p>
                         <p>Téléphone : {{$user->Tel}}<span id="telephoneAnnonceur"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- boutons modifier et supprimer -->
+            <div class="col-2">
+                <div class="row">
+                    <!-- modifier l'annonce-->
+                    <div class="col-6 p-0">
+                        <form action="">
+                            <button type="submit" class="btn btn-noir"><span class="fa fa-edit"></span>
+                                Modifier
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- supprimer l'annonce -->
+                    <div class="col-6 p-0">
+                        <form action="">
+                            <button type="submit" class="btn btn-noir"><span class="fa fa-trash"></span>
+                                Supprimer
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

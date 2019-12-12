@@ -14,7 +14,7 @@ class connexionController extends Controller
             $profil = User::select('TypeProfil')->where('Login', $login)->get();
 
             //Vérifier le type de profil de l'utilsateur
-            if($profil[0]->TypeProfil == "chercheur") return redirect("/boncoloc/accueil"); //Si c'est un chercheur, renvoyer vers lien /boncoloc/accueil
+            if($profil[0]->TypeProfil == "chercheur") return redirect("/boncoloc/rechercheLogement"); //Si c'est un chercheur, renvoyer vers lien /boncoloc/accueil
             else 
             {//Sinon si c'est un annonceur
                 $idUtilisateur = User::select('IdUtilisateur')->where('Login', $login)->get();
@@ -24,12 +24,7 @@ class connexionController extends Controller
                 if(empty($idLocation[0]->IdLocation)) return redirect("/boncoloc/ajoutAnnonce"); //Si l'annonceur n'a jamais publié une annonce le renvoyer vers une page pour l'ajout d'un logement
                 else 
                 {//Sinon le renvoyer vers son annonce qu'il pourra supprimer ou modifier
-                    $allUser = User::all();
-                    foreach ($allUser as $user ){
-                        $tab[] = $user->IdUtilisateur;
-                    }
-                    $resultat = User::select('TypeProfil')->whereIn('IdUtilisateur', $tab)->get();
-                    var_dump($resultat);
+                    return redirect('/boncoloc/monAnnonce');
                 }//return "TU AS DEJA PUBLIE QUELQUE CHOSE !!!";
             }
     }

@@ -4,36 +4,48 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Logement;
+use App\Models\Location;
+use App\Models\Utilisateur;
 
-class annonceController extends Controller
+class listeAnnonce extends Controller
 {
     public function getPage(Request $requete)
     {
         
+        $login = auth()->user()->Login;
+
         //Récuperer les données de la requete
         $prix = $requete->input('prix');
         $nbcoloc = $requete->input('nbcoloc');
         $surface = $requete->input('superficie');
         $nbpieces = $requete->input('nbpieces');
         $type = $requete->input('type');
-        $ville = $requete->input('ville');
+        $cp = $requete->input('cp');
         $ameublement = $requete->input('ameublement');
 
         //Donner un signe en fonction des données
         $signeNbColoc = $this->signeWhere($nbcoloc);
-        $signeSurface = $this->signeWhere($surface);
         $signeNbPieces = $this->signeWhere($nbpieces);
         $signeType = $this->signeWhere($type);
-        $signeVille = $this->signeWhere($ville);
+        $signeCp = $this->signeWhere($cp);
         $signeAmeublement = $this->signeWhere($ameublement);
+
+        if(empty($surface)) $signeSurface = '<>';
+        else $signeSurface = '>';
 
         //Récuperer les logement en fonction des critères
         $result = Logement::where('Prix', '<=', $prix)
-            ->where('CP', $signeVille, $ville)
+            ->where('CP', $signeCp, $cp)
+            ->where('Superficie', $signeSurface, $surface)
+            ->where('NbPieces', $signeNbPieces, $nbpieces)
+            ->where('NbLocataire', $signeNbColoc, $nbcoloc)
+            ->where('Ameublement', $signeAmeublement, $ameublement)
+            ->where('Type', $signeType, $type)
             ->get();
 
+        $nbResultat = $result->count();
         //Vue avec la liste des annonces et les logements disponibles
-        return view('liste-annonces', compact('result'));
+        return view('liste-annonces', compact('result'), ['nbResultat' => $nbResultat, 'login' => $login]);
     }
 
     //Définir si la donnée dans la requete est vide

@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class pageConnexion extends Controller
 {
-    public function getPage(Request $requete)
+    public function getPage()
     {   
         auth()->logout();       
-        return view('index');
+        return view('boncoloc');
     }
 
     public function aldo(){

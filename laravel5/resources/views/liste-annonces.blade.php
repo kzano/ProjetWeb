@@ -36,12 +36,21 @@
                 <img class="logo mr-3" src="{{asset('images/logo-blanc.png')}}" alt="BonColoc">BonColoc
             </a>
             <ul>
-                <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="propos.html">A propos</a></li>
-                <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="index.html">Se déconnecter</a></li>
+                <li class="nav-item mx-1"><a class="nav-link nav-link-white" >{{$login}}</a></li>
+                <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="http://127.0.0.1/laravel5/public/boncoloc/disconnect">Se déconnecter</a></li>
             </ul>
         </nav>
     </header>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                    <button type="submit" class="btn btn-noir" onclick="window.history.back()"><span class="fa fa-caret-left"></span>
+                        Précédent
+                    </button>
+            </div>
+        </div>
+    </div>
     
     <div class="container align-middle">
         @foreach($result as $annonce)
@@ -55,7 +64,7 @@
             <div class="col-9">
                 <h3>{{ $annonce->Titre }}</h3>
                 <span class="span-prix">{{$annonce->Prix}} euros</span>
-                <p><?php $descrp = substr($annonce->Description,0,150)?> {{$descrp}}...</p>
+                <p><?php $descrp = substr($annonce->Description,0,150);?> {{$descrp}}[...]</p>
                 <a class="btn btn-noir" href="http://127.0.0.1/laravel5/public/boncoloc/annonce/{{$annonce->IdLogement}}">Voir l'annonce</a>
             </div>
             

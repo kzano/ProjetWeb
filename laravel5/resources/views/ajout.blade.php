@@ -34,9 +34,7 @@
                 <img class="logo mr-3" src="{{asset('images/logo-blanc.png')}}" alt="BonColoc">BonColoc
             </a>
             <ul>
-                <li class="nav-item mx-1"><a class="nav-link nav-link-white">{{$login}}</a></li>
                 <li class="nav-item mx-1"><a class="nav-link nav-link-white" href="http://127.0.0.1/laravel5/public/boncoloc/disconnect">Se déconnecter</a></li>
-                
             </ul>
         </nav>
     </header>
@@ -47,7 +45,7 @@
         <div class="container card background-fond my-3">
             <h4>Votre annonce</h4>
             <hr width="100%" color="black">
-            <form method="POST" action="" enctype="multipart/form-data">
+            <form action="" enctype="multipart/form-data" method="POST">
                 @csrf
                 <div class="card-body background-black">
 
@@ -60,18 +58,19 @@
                             <!-- Titre annonce -->
                             <div class="form-group mb-4">
                                 <label>Titre de l'annonce</label>
-                                <input name="titre" type="text" class="form-control" value="{{old('titre')}}" id="titreAnnonce" data-toggle="tooltip"
+                                <input name="titre" type="text" class="form-control" id="titreAnnonce" value="{{old('titre')}}" data-toggle="tooltip"
                                     data-placement="top" title="Titre de l'annonce" placeholder="Titre de votre annonce"
                                     required>
                             </div>
 
-                            <!-- Desription de l'annonce -->
+                            <!-- Description de l'annonce -->
                             <div class="form-group mb-4">
                                 <label>Texte de l'annonce</label>
-                                <textarea name="description" class="form-control" id="textAnnonce" rows="7" data-toggle="tooltip"
-                                    data-placement="top" title="Description de l'annonce" value="{{old('description')}}"
+                                <textarea name="description" maxlength="450" class="form-control" id="textAnnonce" rows="7" data-toggle="tooltip"
+                                    value="{{old('description')}}" data-placement="top" title="Description de l'annonce"
                                     placeholder="Description de la colocation et du colocataire recherché"
-                                    required></textarea>
+                                    required onkeyup="updateCharCounter(this, '#reception_num_carac')"></textarea>
+                            <label> Il vous reste <strong id="reception_num_carac">450</strong> caractères</label>
                             </div>
                         </div>
 
@@ -84,8 +83,8 @@
                                 <select name="type" class="form-control custom-select" id="filtreType" data-toggle="tooltip"
                                     data-placement="top" title="Type de bien" required>
                                     <option selected disabled>Type</option>
-                                    <option value=0>Maison</option>
-                                    <option value=1>Appartement</option>
+                                    <option value="Maison">Maison</option>
+                                    <option value="Appartement">Appartement</option>
                                 </select>
                             </div>
 
@@ -109,8 +108,8 @@
                                 <select name="ameublement" class="form-control custom-select" id="filtreMeubles" data-toggle="tooltip"
                                     data-placement="top" title="Ameublement" required>
                                     <option selected disabled>Meublé ou non</option>
-                                    <option value=0>Meublé</option>
-                                    <option value=1>Non-meublé</option>
+                                    <option value="Meublé">Meublé</option>
+                                    <option value="Non-meublé">Non-meublé</option>
                                 </select>
                             </div>
 
@@ -135,7 +134,7 @@
                         <!-- Ville -->
                         <div class="col-md-4">
                             <label>Localisation</label>
-                            <input value="{{old('ville')}}" name="ville" type="text" class="form-control" id="localisation" data-toggle="tooltip"
+                            <input name="ville" value="{{old('ville')}}" type="text" class="form-control" id="localisation" data-toggle="tooltip"
                                 data-placement="top" title="Localisation de la colocation" placeholder="Ville" required>
                         </div>
 
@@ -151,8 +150,8 @@
                         <div class="col-md-3">
                             <label>Superficie</label>
                             <div class="input-group">
-                                <input name="surface" type="number" class="form-control" placeholder="Surface min" maxlength="5"
-                                    pattern="[0-9]{3}" size="5" data-toggle="tooltip" data-placement="top" value="{{old('surface')}}"
+                                <input name="surface" value="{{old('surface')}}" type="number" class="form-control" placeholder="Surface min" maxlength="5"
+                                    pattern="[0-9]{3}" size="5" data-toggle="tooltip" data-placement="top"
                                     title="Surface min. (m²)" required>
                                 <div class="input-group-append">
                                     <span class="input-group-text">m²</span>
@@ -165,7 +164,7 @@
                             <label>Prix</label>
                             <div class="input-group">
                                 <input name="prix" type="number" class="form-control" placeholder="Loyer" maxlength="5"
-                                    pattern="[0-9]{3,}" size="5" data-toggle="tooltip" data-placement="top" value="{{old('prix')}}"
+                                    pattern="[0-9]{3,}" size="5" data-toggle="tooltip" data-placement="top"
                                     title="Prix de loyer en €" required>
                                 <div class="input-group-append">
                                     <span class="input-group-text">€</span>
@@ -182,10 +181,7 @@
                                 <i class="fa fa-3x fa-camera"></i>
                             </label>
                             <input id="file-upload1" type="file" name="photo1" accept=".png, .jpeg"
-                                onchange="showName1()"/>
-                            @if($errors->has('photo1'))
-                            <label>{{$errors->first('photo1')}}</label>
-                            @endif
+                                onchange="showName1()" />
                         </div>
 
                         <!-- Photo 2 -->
@@ -201,7 +197,7 @@
                             <label for="file-upload3" class="custom-file-upload p-4 rounded" title="Photo numéro 3">
                                 <i class="fa fa-3x fa-camera"></i>
                             </label>
-                            <input id="file-upload3" type="file" name="photo3" accept=".png, .jpeg"/>
+                            <input id="file-upload3" type="file" name="photo3" accept=".png, .jpeg" />
                         </div>
                     </div>
 
@@ -222,7 +218,7 @@
                             <span class="badge badge-dark" id="fichier3"></span>
                         </div>
                     </div>
-                    
+
                     <!-- Bouton envoyer formulaire -->
                     <div class="form-row">
                         <div class="text-center w-100">
@@ -273,7 +269,17 @@
     </footer>
 
     <script>
-        //TODO Border rouges si texte vide
+
+        function updateCharCounter(textarea, counterElementSelector){
+        var numberOfLineBreaks = (textarea.value.match(/\n/g)||[]).length;
+        var characterCount = textarea.value.length + numberOfLineBreaks;
+        var restants = +(textarea.getAttribute("maxlength"))-characterCount;
+        var counterElement = document.querySelector(counterElementSelector);
+        if(counterElement != 0){
+            counterElement.style.color = (restants <= 10 ? "red" : "black");
+            counterElement.textContent = restants;
+        }
+
         function checkValidate(idElement) {
             console.log("Test");
             var element = document.getElementById(idElement);
