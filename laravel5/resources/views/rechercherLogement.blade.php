@@ -172,17 +172,17 @@
                     </div>
                 </div>
             </form>
+            @if($errors->has('logement'))
             <div>
                 <div class="row mb-2 text-center">
                     <div class="col text-center">
                         <hr width="100%">
-                        <label id="nbResultatRecherche">[TEMPORAIRE] Nous avons trouvé X résultat(s) selon vos critères
-                            de
-                            recherches</label>
+                        
+                        <label id="nbResultatRecherche">{{$errors->first('logement')}}</label>
                     </div>
                 </div>
             </div>
-
+            @endif
         </div>
     </div>
 
