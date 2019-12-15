@@ -138,9 +138,8 @@
                         <div class="row">
                             <!-- premiere colonne-->
                             <div class="col-4">
-                                <p>Nombre de colocataire<br>actuellement : {{$annonce->NbLocataire}}<span id="typeBien"></span></p>
-                            </div>
-
+                                <p>Nombre de colocataire<br>actuellement : @if($annonce->NbLocataire == '4') {{'4 ou +'}}
+                                @else {{$annonce->NbLocataire}} @endif
                             <!-- deuxieme colonne-->
                             <div class="col-4 align-self-center" style="height: 100%;">
                                 <p>Superficie : {{$annonce->Superficie}} m²<span id="nbPieces"></span></p>

@@ -90,7 +90,7 @@
                     <!-- titre de l'annonce -->
                     <div>
                         <div class="mb-2">
-                            <h1>Titre</h1>
+                            <h1>{{$annonce->Titre}}</h1>
                             <p><span class="span-prix">{{$annonce->Prix}} €</span></p>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
 
                             <!-- deuxieme colonne-->
                             <div class="col-4">
-                                <p>Nombre de pièces : {{$annonce->NbPiece}}<span id="nbPieces"></span></p>
+                                <p>Nombre de pièces : {{$annonce->NbPieces}}<span id="nbPieces"></span></p>
                             </div>
 
                             <!-- troisieme colonne-->
@@ -183,7 +183,8 @@
                 <div class="row">
                     <!-- modifier l'annonce-->
                     <div class="col-6 p-0">
-                        <form action="">
+                        <form method="POST" action="http://127.0.0.1/laravel5/public/boncoloc/monAnnonce/modification">
+                        @csrf
                             <button type="submit" class="btn btn-noir"><span class="fa fa-edit"></span>
                                 Modifier
                             </button>
@@ -193,6 +194,7 @@
                     <!-- supprimer l'annonce -->
                     <div class="col-6 p-0">
                         <form action="">
+                        @csrf
                             <button type="submit" class="btn btn-noir"><span class="fa fa-trash"></span>
                                 Supprimer
                             </button>

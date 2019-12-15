@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/boncoloc/annonce/{id}', 'annonce@getPage')->middleware('App\Http\Middleware\auth');
+Route::get('/boncoloc/annonce/{id}', 'annonce@getPage')->middleware('App\Http\Middleware\typeProfilRecherche');
 
-Route::get('/boncoloc/monAnnonce', 'monAnnonceController@getPage')->middleware('App\Http\Middleware\auth');
+Route::get('/boncoloc/monAnnonce', 'monAnnonceController@getPage')->middleware('App\Http\Middleware\typeProfilAnnonceur');
 
-Route::get('/boncoloc/ajoutAnnonce', 'ajoutPublicationController@getPage')->middleware('App\Http\Middleware\auth');
+Route::get('/boncoloc/ajoutAnnonce', 'ajoutPublicationController@getPage')->middleware('App\Http\Middleware\typeProfilAnnonceur');
 
-Route::post('/boncoloc/annonce', 'listeAnnonce@getPage')->middleware('App\Http\Middleware\auth');
+Route::post('/boncoloc/annonce', 'listeAnnonce@getPage')->middleware('App\Http\Middleware\typeProfilRecherche');
 
-Route::post('/boncoloc/ajoutAnnonce', 'ajoutPublicationController@postAjoutAnnonce')->middleware('App\Http\Middleware\auth');
+Route::post('/boncoloc/ajoutAnnonce', 'ajoutPublicationController@postAjoutAnnonce')->middleware('App\Http\Middleware\typeProfilAnnonceur');
 
 Route::get('/boncoloc/inscription', 'inscriptionController@getPage');
 
@@ -31,11 +31,15 @@ Route::post('/boncoloc', 'pageConnexion@aldo');
 
 Route::post('/verif', 'connexionController@postConnexion')->middleware('App\Http\Middleware\verifConnexion');
 
-Route::get('/boncoloc/rechercheLogement', 'accueilController@getPage')->middleware('App\Http\Middleware\auth');
+Route::get('/boncoloc/rechercheLogement', 'accueilController@getPage')->middleware('App\Http\Middleware\typeProfilRecherche');
 
 Route::get('/boncoloc/disconnect', 'decoController@controleDisconnect')->middleware('App\Http\Middleware\auth');
 
 Route::get('/boncoloc/inscription', 'inscriptionController@getPage');
+
+Route::post('boncoloc/monAnnonce/modification', 'modificationAnnonceController@getPageModification')->middleware('App\Http\Middleware\typeProfilAnnonceur');
+
+Route::post('boncoloc/monAnnonce/modification/{id}', 'validationModification@validateModification')->middleware('App\Http\Middleware\typeProfilAnnonceur');
 
 Route::get('/', function () {
     return view('welcome');

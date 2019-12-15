@@ -53,6 +53,16 @@
     </div>
     
     <div class="container align-middle">
+    <div>
+            <div class="row mb-2 text-center">
+                <div class="col text-center">
+                    <label id="nbResultatRecherche">Nous avons trouvé {{$nbResultat}} résultat(s) selon vos critères
+                        de
+                        recherches</label>
+                    <hr width="100%">
+                </div>
+            </div>
+        </div>
         @foreach($result as $annonce)
         <div class="row mb-2 align-items-center col-annonce shadow bg-white rounded">
             <div class="col-3">
