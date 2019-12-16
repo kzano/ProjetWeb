@@ -41,6 +41,12 @@
         </nav>
     </header>
 
+    @if(session()->has('inscription'))
+    <div class="alert alert-success">
+        {{session()->get('inscription')}}
+    </div>
+    @endif
+
     <!-- formulaire de connexion -->
     <div class="container-fluid align-middle">
         <div class="row">

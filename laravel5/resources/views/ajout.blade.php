@@ -39,6 +39,11 @@
         </nav>
     </header>
 
+    @if(session()->has('suppr'))
+    <div class="alert alert-success">
+    {{session()->get('suppr')}}
+    </div>
+    @endif
     <div class="container-fluid">
         <!-- my-x = margin entre les divs en prenant le top et bottom (cf : https://getbootstrap.com/docs/4.0/utilities/spacing/) -->
 

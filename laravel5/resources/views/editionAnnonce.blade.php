@@ -43,6 +43,12 @@
         </nav>
     </header>
 
+    @if(session()->has('modification'))
+    <div class="alert alert-success">
+        {{session()->get('modification')}}
+    </div>
+    @endif
+    
     <div class="container-fluid align-middle">
         <div class="row m-5 align-items-center">
             <h1 style="width: 100%; text-align: center;" class="mx-auto">Aperçu de votre annonce</h1>
@@ -193,7 +199,7 @@
 
                     <!-- supprimer l'annonce -->
                     <div class="col-6 p-0">
-                        <form action="">
+                        <form method="POST" onsubmit="return confirmation();" action="http://127.0.0.1/laravel5/public/boncoloc/monAnnonce/supprimer/{{$annonce->IdLogement}} ">
                         @csrf
                             <button type="submit" class="btn btn-noir"><span class="fa fa-trash"></span>
                                 Supprimer
@@ -205,6 +211,14 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+
+    function confirmation() {
+    return confirm("Etes vous sur de vouloir supprimer votre annonce ?");
+    }
+
+    </script>
+    
     <!-- pied -->
     <footer class="footer bg-dark mt-5">
         <!-- Footer Elements -->

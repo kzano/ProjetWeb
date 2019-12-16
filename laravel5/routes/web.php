@@ -41,6 +41,8 @@ Route::post('boncoloc/monAnnonce/modification', 'modificationAnnonceController@g
 
 Route::post('boncoloc/monAnnonce/modification/{id}', 'validationModification@validateModification')->middleware('App\Http\Middleware\typeProfilAnnonceur');
 
+Route::post('boncoloc/monAnnonce/supprimer/{id}', 'supprimerAnnonceController@delete')->middleware('App\Http\Middleware\typeProfilAnnonceur');
+
 Route::get('/', function () {
     return view('welcome');
 });

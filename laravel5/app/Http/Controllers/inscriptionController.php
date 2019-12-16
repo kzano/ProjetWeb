@@ -73,9 +73,10 @@ class inscriptionController extends Controller
         if(empty($res1[0]) && empty($res2[0]))
         {
         $utilisateur->save();
-
+        session()->flash('inscription', 'Inscription avec succès !');
+        
         sleep(3);
-
+        
         return redirect("/boncoloc");
         }
         //Sinon

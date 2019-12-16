@@ -7,7 +7,7 @@ use App\Models\Logement;
 
 class validationModification extends Controller
 {
-    public function validateModification($id){
+    public function validateModification(Request $requete, $id){
 
         $logement = Logement::find($id);
         $logement->update([
@@ -20,10 +20,12 @@ class validationModification extends Controller
             'Ville' => Request('ville'),
             'CP' => Request('cp'),
             'Superficie' => Request('surface'),
-            'Prix' => Request('prix')
+            'Prix' => Request('prix'),
         ]);
 
         $logement->save();
+
+        session()->flash('modification','Modification ok');
 
         return redirect('/boncoloc/monAnnonce');
     }

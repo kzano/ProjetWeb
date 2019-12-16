@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $IdLogement
  * @property string $Type
+ * @property string Titre
  * @property int $Superfice
  * @property int $NbPieces
  * @property string $Ville
@@ -45,6 +46,7 @@ class Logement extends Model
 	];
 
 	protected $fillable = [
+		'Titre',
 		'Type',
 		'Superficie',
 		'NbPieces',
