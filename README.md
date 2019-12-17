@@ -42,7 +42,7 @@ Lors de l'installation il vous sera demandé de localiser « php.exe ». Il se s
 
 ### Le site
 
-Maintenant vous pouvez librement accéder au site en cliquant sur ce [lien](127.0.0.1/laravel5/public/boncoloc) ou en vous rendant à l'adresse _127.0.0.1/laravel5/public/boncoloc_
+Maintenant vous pouvez librement accéder au site en cliquant sur ce [lien](http://127.0.0.1/laravel5/public/boncoloc) ou en vous rendant à l'adresse _127.0.0.1/laravel5/public/boncoloc_
 
 1. Vous devez créer votre propre compte afin d'accéder au site.
 
