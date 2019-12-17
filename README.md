@@ -1,7 +1,7 @@
 # BonColoc
 ## Installation
 ### WampServer
-Installez [WampServer](http://www.wampserver.com/) sur votre ordinateur.
+Installez [WampServer](http://www.wampserver.com/) sur votre ordinateur. Lors de la sélection des composants à  installer, si `MySQL` n'est pas coché alors cochez-le.
 **Si vous rencontrez des erreurs de dll lors de l'installation, vous devez installer ces derniers puis réinstaller Wampserver. Répetez l'opération jusqu'a l'installation totale sans erreurs de dll.**
 
    1. Une fois Wampserver installé, vous pouvez accéder au dossier « wamp64 » qui est présent dans l'emplacement sur votre poste où avez installé le serveur. Dans ce dernier il y aura un dossier « www ». C'est dans celui-ci que seront stockées les pages. Exemple : une page web index.html y est présente dans le dossier « www ». Pour y accéder : [http://127.0.0.1/index.html](http://127.0.0.1/index.html)
@@ -42,7 +42,7 @@ Lors de l'installation il vous sera demandé de localiser « php.exe ». Il se s
 
 ### Le site
 
-Maintenant vous pouvez librement accéder au site en cliquant sur ce [lien](127.0.0.1/laravel5/public/boncoloc) ou en vous rendant à l'adresse _127.0.0.1/laravel5/public/boncoloc_
+Maintenant vous pouvez librement accéder au site en cliquant sur ce [lien](http://127.0.0.1/laravel5/public/boncoloc) ou en vous rendant à l'adresse _127.0.0.1/laravel5/public/boncoloc_
 
 1. Vous devez créer votre propre compte afin d'accéder au site.
 
