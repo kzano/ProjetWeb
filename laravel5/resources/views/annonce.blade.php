@@ -125,7 +125,7 @@
 
                             <!-- deuxieme colonne-->
                             <div class="col-4">
-                                <p>Nombre de pièces : {{$annonce->NbPieces}} <span id="nbPieces"></span></p>
+                                <p>Nombre de pièces : {{$annonce->NbPieces}}<span id="nbPieces"></span></p>
                             </div>
 
                             <!-- troisieme colonne-->
@@ -138,8 +138,9 @@
                         <div class="row">
                             <!-- premiere colonne-->
                             <div class="col-4">
-                                <p>Nombre de colocataire<br>actuellement : @if($annonce->NbLocataire == '4') {{'4 ou +'}}
-                                @else {{$annonce->NbLocataire}} @endif
+                                <p>Nombre de colocataire<br>actuellement : {{$annonce->NbLocataire}} @if($annonce->NbLocataire=='4'){{'+'}}@endif<span id="typeBien"></span></p>
+                            </div>
+
                             <!-- deuxieme colonne-->
                             <div class="col-4 align-self-center" style="height: 100%;">
                                 <p>Superficie : {{$annonce->Superficie}} m²<span id="nbPieces"></span></p>
@@ -155,7 +156,7 @@
 
                             <!-- deuxieme colonne-->
                             <div class="col-4">
-                                <p>Ville : {{$annonce->Ville}}<span id="Ville"></span></p>
+                                <p>Ville : {{$annonce->Ville}}<span id="nbPieces"></span></p>
                             </div>
                         </div>
                     </div>

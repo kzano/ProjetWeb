@@ -25,7 +25,7 @@ class validationModification extends Controller
 
         $logement->save();
 
-        session()->flash('modification','Modification ok');
+        session()->flash('modification','Votre annonce est actualisée ! ');
 
         return redirect('/boncoloc/monAnnonce');
     }

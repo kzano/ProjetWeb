@@ -20,7 +20,7 @@ class ajoutPublicationController extends Controller
 
         //Validation de la requete
         Request()->validate([
-            'titre' => ['required'],
+            'titre' => ['required', 'max:60'],
             'description' => ['required'],
             'pieces' => ['required'],
             'type' => ['required'],

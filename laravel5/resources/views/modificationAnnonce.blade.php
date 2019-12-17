@@ -41,7 +41,14 @@
 
     <div class="container-fluid">
         <!-- my-x = margin entre les divs en prenant le top et bottom (cf : https://getbootstrap.com/docs/4.0/utilities/spacing/) -->
-
+        <div class="row">
+            <div class="col-2">
+                    <button type="submit" class="btn btn-noir" onclick="window.history.back()"><span class="fa fa-caret-left"></span>
+                        Précédent
+                    </button>
+            </div>
+        </div>
+    
         <div class="container card background-fond my-3">
             <h4>Votre annonce</h4>
             <hr width="100%" color="black">
@@ -178,6 +185,7 @@
                         </div>
                     </div>
                     <!-- Bouton envoyer formulaire -->
+                    </br>
                     <div class="form-row">
                         <div class="text-center w-100">
                             <button type="submit" class="btn-noir w-25 py-2" value="Submit" data-toggle="tooltip"

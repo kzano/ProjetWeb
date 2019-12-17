@@ -15,7 +15,9 @@ class auth
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->guest()) return redirect('/boncoloc');
+        
+        if(auth()->guest()) return redirect('/boncoloc'); //Si l'utilisateur actuel est anonyme 
+        
         return $next($request);
     }
 }

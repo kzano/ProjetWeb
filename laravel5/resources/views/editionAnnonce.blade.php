@@ -138,7 +138,7 @@
                         <div class="row">
                             <!-- premiere colonne-->
                             <div class="col-4">
-                                <p>Nombre de colocataire<br>actuellement : {{$annonce->NbLocataire}}<span id="typeBien"></span></p>
+                                <p>Nombre de colocataire<br>actuellement : {{$annonce->NbLocataire}} @if($annonce->NbLocataire=='4'){{'+'}}@endif<span id="typeBien"></span></p>
                             </div>
 
                             <!-- deuxieme colonne-->

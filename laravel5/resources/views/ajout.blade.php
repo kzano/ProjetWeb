@@ -63,9 +63,10 @@
                             <!-- Titre annonce -->
                             <div class="form-group mb-4">
                                 <label>Titre de l'annonce</label>
-                                <input name="titre" type="text" class="form-control" id="titreAnnonce" value="{{old('titre')}}" data-toggle="tooltip"
+                                <input name="titre" type="text" class="form-control @if($errors->has('titre')) {{'is-invalid'}}@endif" id="titreAnnonce" value="{{old('titre')}}" data-toggle="tooltip"
                                     data-placement="top" title="Titre de l'annonce" placeholder="Titre de votre annonce"
                                     required>
+                                    <div class="invalid-feedback" id="div-verification-mdp">{{$errors->first('titre')}}</div>
                             </div>
 
                             <!-- Description de l'annonce -->
@@ -73,8 +74,9 @@
                                 <label>Texte de l'annonce</label>
                                 <textarea name="description" maxlength="450" class="form-control" id="textAnnonce" rows="7" data-toggle="tooltip"
                                     value="{{old('description')}}" data-placement="top" title="Description de l'annonce"
-                                    placeholder="Description de la colocation et du colocataire recherché"
+                                    placeholder="Description de la colocation et du colocataire recherché"  onkeyup="caractereRestant(this)"
                                     required></textarea>
+                                    <p>Encore <strong id="reception_num_carac">450</strong> caractères</p>
                             </div>
                         </div>
 
@@ -122,7 +124,7 @@
                                 <label>Colocataires</label>
                                 <select name="nbcoloc" class="custom-select" id="filtreColoc" data-toggle="tooltip"
                                     data-placement="top" title="Nombre de colocataire" required>
-                                    <option selected disabled>Nombre de colocataires</option>
+                                    <option selected disabled>Nombre de colocataires actuellement</option>
                                     <option value=1>1</option>
                                     <option value=2>2</option>
                                     <option value=3>3</option>
@@ -156,7 +158,7 @@
                             <div class="input-group">
                                 <input name="surface" value="{{old('surface')}}" type="number" class="form-control" placeholder="Surface min" maxlength="5"
                                     pattern="[0-9]{3}" size="5" data-toggle="tooltip" data-placement="top"
-                                    title="Surface min. (m²)" required>
+                                    title="Surface (m²)" required>
                                 <div class="input-group-append">
                                     <span class="input-group-text">m²</span>
                                 </div>
@@ -169,13 +171,21 @@
                             <div class="input-group">
                                 <input name="prix" type="number" class="form-control" placeholder="Loyer" maxlength="5"
                                     pattern="[0-9]{3,}" size="5" data-toggle="tooltip" data-placement="top"
-                                    title="Prix de loyer en €" required>
+                                    title="Prix de loyer en €" value="{{old('prix')}}" required>
                                 <div class="input-group-append">
                                     <span class="input-group-text">€</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    @if($errors->has('photo1') | $errors->has('photo2') | $errors->has('photo3'))
+                    <p>
+                    <div class="alert alert-warning" role="alert">
+                        Les images sont requises et doivent être de format .jpeg ou .png
+                    </div>
+                    </p>
+                    @endif
 
                     <!-- Troisìème ligne (ajout photos) -->
                     <div class="row mt-5">
@@ -280,6 +290,21 @@
 
             }
             element.classList.add("is-valid");
+        }
+
+        function caractereRestant(textarea)
+        {
+            if(textarea.value.length > 450) textarea.value = textarea.value.substring(0, 450); 
+            if(textarea.value.length < 420){
+                textarea.style.color='black'; 
+                document.getElementById('reception_num_carac').style.color = 'black';
+            }
+            else
+            {
+                textarea.style.color='red'; 
+                document.getElementById('reception_num_carac').style.color = 'red';
+                }
+            document.getElementById('reception_num_carac').innerHTML = 450 - textarea.value.length;
         }
 
         //Gestion des noms de fichier sous photo

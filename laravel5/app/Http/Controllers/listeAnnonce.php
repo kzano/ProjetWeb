@@ -48,7 +48,7 @@ class listeAnnonce extends Controller
             $jv = $user[0]->JeuxVideo;
             $fete = $user[0]->Fete;
 
-            $usersIdentiques = Utilisateur::where("Sport", $sport)
+            $usersIdentiques = Utilisateur::where('Sport', $sport)
                 ->where('Lecture', $lecture)
                 ->where('Arts', $arts)
                 ->where('Musique', $musique)
@@ -58,7 +58,7 @@ class listeAnnonce extends Controller
 
             if(!empty($usersIdentiques[0]))
                 {
-                foreach ($usersIdentiques as $usersIdentiques) $tabUsersIdentique[] = $usersIdentiques->IdUtilisateur;
+                foreach ($usersIdentiques as $usersCompatibles) $tabUsersIdentique[] = $usersCompatibles->IdUtilisateur;
 
                 foreach ($result as $logement) $tabLogement[] = $logement->IdLogement;
 
@@ -67,7 +67,7 @@ class listeAnnonce extends Controller
                 foreach ($location as $location) $tabLocation[] = $location->IdLocation;
 
                 $resultatLocation = Location::whereIn('IdLocation', $tabLocation)
-                    ->whereIn('IdUtilisateur', $usersIdentiques)
+                    ->whereIn('IdUtilisateur', $tabUsersIdentique)
                     ->get();
                 
                 if(!empty($resultatLocation[0]))
@@ -86,7 +86,6 @@ class listeAnnonce extends Controller
         }
 
         $nbResultat = $result->count();
-
         //Vue avec la liste des annonces et les logements disponibles
         return view('liste-annonces', compact('result'), ['nbResultat' => $nbResultat, 'login' => $login]);
     }
