@@ -32,7 +32,7 @@ Lors de l'installation il vous sera demandé de localiser « php.exe ». Il se s
     DB_PASSWORD = bddcoloc2019
     ```
 
-6. Enregistrez puis fermez ce dernier.
+6. Enregistrez puis fermez ce dernier. Si vous rencontrez des soucis de requêtes lors de la navigation sur notre site, il se peut que le numéro de port de la base de données (fichier `.env`) soit différent de celui utilisé par votre serveur MySQL.
 
 7. Pour finir, ouvrez une invite de commande, placez-vous dans le dossier "laravel5" et tapez :
 
@@ -47,6 +47,7 @@ Maintenant vous pouvez librement accéder au site en cliquant sur ce [lien](http
 1. Vous devez créer votre propre compte afin d'accéder au site.
 
 2. Bonne visite sur notre site ! :)
+
 
 **Si besoin vous pouvez utiliser ce [site](https://openclassrooms.com/fr/courses/1811341-decouvrez-le-framework-php-laravel-ancienne-version/1820116-installation-et-organisation) pour l'installtion de composer et laravel.**
 
