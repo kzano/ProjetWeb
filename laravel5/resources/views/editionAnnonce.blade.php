@@ -69,15 +69,15 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="http://127.0.0.1/laravel5/public/publications/{{$annonce->Image_1}}"
-                                class="d-block w-100 rounded-top img-fluid" alt="...">
+                                class="d-block dim-img rounded-top img-fluid" alt="...">
                         </div>
                         <div class="carousel-item">
                             <img src="http://127.0.0.1/laravel5/public/publications/{{$annonce->Image_2}}"
-                                class="d-block w-100 rounded-top img-fluid" alt="...">
+                                class="d-block dim-img rounded-top img-fluid" alt="...">
                         </div>
                         <div class="carousel-item">
                             <img src="http://127.0.0.1/laravel5/public/publications/{{$annonce->Image_3}}"
-                                class="d-block w-100 rounded-top img-fluid" alt="...">
+                                class="d-block dim-img rounded-top img-fluid" alt="...">
                         </div>
                     </div>
 

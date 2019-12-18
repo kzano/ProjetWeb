@@ -34,7 +34,7 @@ class inscriptionController extends Controller
             'lastname' => ['required'],
             'date' => ['required', 'date'],
             'mail' => ['required', 'email'],
-            'phone' => ['required'],
+            'phone' => ['required','max:10','min:10'],
             'login' => ['required'],
             'mdp' => ['required','confirmed','min:8'],
             'mdp_confirmation' => ['required'],
@@ -42,6 +42,7 @@ class inscriptionController extends Controller
         ]);
 
         $utilisateur = New User;
+        
         //Préférences
         $utilisateur->Sport = $this->IfEmpty($requete->input('sport'));
         $utilisateur->Arts = $this->IfEmpty($requete->input('arts'));

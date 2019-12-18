@@ -88,7 +88,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="inputTelephone">Numéro de téléphone</label>
-                                <input value="{{old('phone')}}" name="phone" type="number" class="form-control" id="inputTelephone"
+                                <input value="{{old('phone')}}" name="phone" type="number" class="form-control @if($errors->has('phone')) {{'is-invalid'}} @endif" id="inputTelephone"
                                     placeholder="Numéro de téléphone" maxlength="10" pattern="[0-9]{10}" required>
                             </div>
                         </div>

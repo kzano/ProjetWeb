@@ -287,3 +287,9 @@ input[type="file"] {
 .custom-control-label{
     white-space: nowrap;
 }
+
+/* images annonce */
+.dim-img {
+    width: 900px;
+    height: 500px;
+}
